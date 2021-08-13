@@ -1,0 +1,162 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body{
+    background-color: #F3F3F3;
+}
+.clearFix:after {
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+}
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+.form-group{
+    padding-top: 10px;
+}
+.form-block{
+    padding-bottom: 20px;
+
+}
+.form-title{
+    text-align: center;
+    font-size: 32px;
+    padding: 20px 0;
+}
+.block-title{
+    text-align: left;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    padding: 8px 0;
+    padding-left: 0.7%;
+    background-color: #FCE5CD;
+}
+.title{
+    padding-left: 0.7%;
+    float: left;
+    width: 20%;
+    font-size: 20px;
+    padding-top: 8px;
+}
+.data{
+    float: left;
+    width: 80%;
+    border: none;
+    border: 1px solid #888888;
+    height: 30px;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+}
+.data1{
+    margin-top: 7px;
+    border: none;
+}
+.address{
+    height: 100px;
+}
+.phone{
+    width: 77%;
+}
+.btn{
+    width: 3%;
+    height: 30px;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.form-group2 .sub-title,
+.diploma{
+    padding-top: 10px;
+    padding-bottom: 30px;
+    float: left;
+    padding-left: 1%;
+    background-color: #CFE2F3;
+}
+.diploma{
+    float: right;
+    width: 80%;
+    padding-bottom: 10px;
+    border-left: 1px solid #888888;
+    border-right: 1px solid #888888;
+}
+.form-group2 .sub-title{
+    width: 25%;
+    background-color: #FFF;
+}
+.sub-title-block{
+    width: 80%;
+    float: right;
+}
+.uni, .major, .year, .degree{
+    width: 25%;
+}
+.program{
+    font-size: 20px;
+    margin-top: 8px;
+    float: left;
+    width: 25%;
+}
+.form-group3{
+    float: right;
+    width: 80%;
+}
+.language, .level{
+    width: 25%;
+}
+.english{
+    width: 100%;
+}
+.lang{
+    width: 80%;
+    float: right;
+    border: none;
+    border-top: 1px solid #888888;
+}
+.lang-block{
+    width: 80%;
+    float: right;
+}
+.color{
+    background-color: #CFE2F3;
+    border-left: 1px solid #888888;
+    border-right: 1px solid #888888;
+}
+.jobexp{
+    margin-top: 10px;
+    width: 2%;
+    height: 20px;
+}
+.submit-btn{
+    margin-top: 20px;
+    text-align: center;
+}
+.create-btn,
+.reset-btn{
+    width: 10%;
+    border: 1px solid #CFE2F3;
+    background-color: purple;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.create-btn:hover,
+.reset-btn:hover{
+    cursor: pointer;
+}

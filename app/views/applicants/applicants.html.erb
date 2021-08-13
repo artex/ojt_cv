@@ -1,0 +1,202 @@
+<div class="container">
+  <h2 class="form-title">OJT Application Form</h2>
+  <%= form_with url: '/confirm', class: "main-form" do |form| %>
+
+    <%# Personal Information %>
+    <div class="form-block">
+      <h3 class="block-title">Personal Information</h3>
+
+      <%# name %>
+      <div class="form-group clearFix">
+        <%= form.label :name, "Name", class: "title" %>
+        <%= form.text_field :name, class: "data" %>
+      </div>
+
+      <%# profile photo %>
+      <div class="form-group clearFix">
+        <%= form.label :profile_photo, "Profile Picture", class: "title" %>
+        <%= form.file_field :profile_photo, class: "data data1"%>
+      </div>
+
+      <%# Date of Birth %>
+      <div class="form-group clearFix">
+        <%= form.label :dob, "Date of Birth", class: "title" %>
+        <%= form.date_field :dob, class: "data"%>
+      </div>
+
+      <%# Phone %>
+      <div class="form-group clearFix">
+        <%= form.label :phone_no, "Phone Number", class: "title" %>
+        <%# phone_no1 %>
+        <%= form.number_field :phone_no1, class: "data phone"%><%= image_tag ("cross.png"), class: "btn" %>
+        <%# phone_no2 %>
+        <%= form.number_field :phone_no2, class: "data phone"%><%= image_tag ("plus.png"), class: "btn" %>
+      </div>
+
+      <%# Email %>
+      <div class="form-group clearFix">
+        <%= form.label :email, "Email", class: "title" %>
+        <%= form.text_field :email, class: "data"%>
+      </div>
+
+      <%# Current Address %>
+      <div class="form-group clearFix">
+        <%= form.label :current_address, "Current Address", class: "title" %>
+        <%= form.text_area :current_address, class: "data address"%>
+      </div>
+
+      <%# Hometown Address %>
+      <div class="form-group clearFix">
+        <%= form.label :haddress, "Hometown Address", class: "title" %>
+        <%= form.text_area :haddress, class: "data address"%>
+      </div>
+
+    </div>
+
+    <%# Education Background %>
+    <div class="form-block">
+      <h3 class="block-title">Education Background</h3>
+
+      <%# Education Level %>
+      <div class="form-group clearFix">
+        <%= form.label :edu, "Education Level", class: "title" %>
+        <%= select_tag :edu, options_for_select([['Diploma, Bachelor, Master'], ['Diploma'], ['Bachelor'], ['Master']]),
+         class: "data"%>
+        <div class="form-group2 clearFix">
+
+          <%# diploma %>
+          <div class="diploma">Diploma</div>
+          <div class="sub-title-block">
+            <%= form.label :university, "University", class: "data sub-title" %>
+            <%= form.label :major, "Major", class: "data sub-title" %>
+            <%= form.label :year, "Year", class: "data sub-title" %>
+            <%= form.label :degree, "Degree", class: "data sub-title" %>
+            <%= form.text_field :university, class: "data uni" %>
+            <%= form.text_field :major, class: "data major" %>
+            <%= form.text_field :year, class: "data year" %>
+            <%= form.text_field :degree, class: "data degree" %>
+          </div>
+
+          <%# Bachelor %>
+          <div class="diploma">Bachelor</div>
+          <div class="sub-title-block">
+            <%= form.label :university, "University", class: "data sub-title" %>
+            <%= form.label :major, "Major", class: "data sub-title" %>
+            <%= form.label :year, "Year", class: "data sub-title" %>
+            <%= form.label :degree, "Degree", class: "data sub-title" %>
+            <%= form.text_field :university, class: "data uni" %>
+            <%= form.text_field :major, class: "data major" %>
+            <%= form.text_field :year, class: "data year" %>
+            <%= form.text_field :degree, class: "data degree" %>
+          </div>
+
+          <%# Master %>
+          <div class="diploma">Master</div>
+          <div class="sub-title-block">
+            <%= form.label :university, "University", class: "data sub-title" %>
+            <%= form.label :major, "Major", class: "data sub-title" %>
+            <%= form.label :year, "Year", class: "data sub-title" %>
+            <%= form.label :degree, "Degree", class: "data sub-title" %>
+            <%= form.text_field :university, class: "data uni" %>
+            <%= form.text_field :major, class: "data major" %>
+            <%= form.text_field :year, class: "data year" %>
+            <%= form.text_field :degree, class: "data degree" %>
+          </div>
+
+        </div>
+      </div>
+
+      <%# Diploma Name %>
+      <div class="form-group clearFix">
+        <%= form.label :diploma_name, "Diploma Name", class: "title" %>
+        <%= form.text_field :diploma_name, class: "data" %>
+      </div>
+
+      <%# Other Certification %>
+      <div class="form-group clearFix">
+        <%= form.label :certificate, "Other Certification", class: "title" %>
+        <%= form.text_field :certificate, class: "data" %>
+      </div>
+
+      <%# Programming Skills %>
+      <div class="form-group clearFix">
+        <%= form.label :program, "Programming Skills", class: "title" %>
+
+        <%# Programming Language/Level %>
+        <div class="form-group3">
+          <div class="clearFix">
+            <%= form.label :programming_language, "Language", class: "program" %>
+            <%= form.label :programming_level, "Level", class: "program" %>
+          </div> 
+          <%# Programming Language/Level 01 %>
+          <div>
+            <%= form.text_field :programming_language, class: "data language" %>
+            <%= form.text_field :programming_level, class: "data level" %><%= image_tag ("cross.png"), class: "btn" %>
+          </div>
+          <%# Programming Language/Level 02 %>
+          <div>
+            <%= form.text_field :programming_language, class: "data language" %>
+            <%= form.text_field :programming_level, class: "data level" %><%= image_tag ("plus.png"), class: "btn" %>
+          </div>
+        </div>
+      </div>
+
+      <%# Language Skills %>
+      <div class="form-group clearFix">
+        <%= form.label :skill, "Language Skills", class: "title" %>
+        <div class="lang clearFix">
+          <%# English Skill %>
+          <%= form.label :english, "English", class: "title english color" %>
+          <%= form.text_field :english, class: "data english", placeholder: "level" %>
+          <%# Japanese Skill %>
+          <%= form.label :japanese, "Japanese", class: "title english color" %>
+          <%= form.text_field :japanese, class: "data english", placeholder: "level" %>
+          <%# Other Skill %>
+          <%= form.label :other, "Other", class: "title english color" %>
+          <%= form.text_field :other, class: "data english", placeholder: "level" %>
+        </div>
+      </div>
+    </div>
+
+    <%# Experience %>
+    <div class="form-block">
+      <h3 class="block-title">Experience</h3>
+
+      <%# Has Job Experience %>
+      <div class="form-group clearFix">
+        <%= form.label :is_exist_job_exp, "Has Job Experience", class: "title" %>
+        <%= form.check_box :is_exist_job_exp, class: "jobexp" %>
+      </div>
+
+      <%# Internship Information %>
+      <div class="form-group clearFix">
+        <%= form.label :internship_info, "Internship Info", class: "title" %>
+        <%= form.text_area :internship_info, class: "data address"%>
+      </div>
+
+      <%# Job Experience %>
+      <div class="form-group clearFix">
+        <%= form.label :job_experience, "Job Experience", class: "title" %>
+        <%= form.text_area :job_experience, class: "data address"%>
+      </div>
+
+      <%# Total Experience Year %>
+      <div class="form-group clearFix">
+        <%= form.label :total_exp_year, "Total Experience Year", class: "title" %>
+        <%= form.text_field :total_exp_year, class: "data"%>
+      </div>
+
+      <%# Comment %>
+      <div class="form-group clearFix">
+        <%= form.label :comment, "Comment", class: "title" %>
+        <%= form.text_area :comment, class: "data address"%>
+      </div>
+    </div>
+
+    <%# Buttons %>
+    <div class="submit-btn">
+        <%= form.submit class: " create-btn " %>
+        <%= form.submit class: " reset-btn " %>
+    </div>
+  <% end %>
+</div>
