@@ -13,150 +13,253 @@
  *= require_tree .
  *= require_self
  */
-body{
-    background-color: #F3F3F3;
-}
 .clearFix:after {
-    content: '';
-    display: block;
-    clear: both;
-    visibility: hidden;
-    font-size: 0;
-    height: 0;
+	content: '';
+	display: block;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+	height: 0;
 }
-.container{
-    width: 70%;
-    margin: 0 auto;
-}
-.form-group{
-    padding-top: 10px;
-}
-.form-block{
-    padding-bottom: 20px;
 
+.container {
+	width: 70%;
+	margin: 0 auto;
 }
-.form-title{
-    text-align: center;
-    font-size: 32px;
-    padding: 20px 0;
+
+.form-group {
+	padding-top: 10px;
 }
-.block-title{
-    text-align: left;
-    font-size: 24px;
-    margin: 0;
-    padding: 0;
-    padding: 8px 0;
-    padding-left: 0.7%;
-    background-color: #FCE5CD;
+
+.form-block {
+	padding-bottom: 20px;
+	border: 1px solid #888888;
+	background-color: #F3F3F3;
 }
-.title{
-    padding-left: 0.7%;
-    float: left;
-    width: 20%;
-    font-size: 20px;
-    padding-top: 8px;
+
+.form-title {
+	text-align: center;
+	font-size: 32px;
+	padding: 20px 0;
 }
-.data{
-    float: left;
-    width: 80%;
-    border: none;
-    border: 1px solid #888888;
-    height: 30px;
-    font-size: 15px;
-    letter-spacing: 1.2px;
+
+.block-title {
+	text-align: left;
+	font-size: 24px;
+	margin: 0;
+	padding: 0;
+	padding: 8px 0;
+	padding-left: 0.7%;
+	background-color: #FCE5CD;
 }
-.data1{
-    margin-top: 7px;
-    border: none;
+
+.title {
+	padding-left: 0.7%;
+	float: left;
+	width: 20%;
+	font-size: 20px;
+	padding-top: 8px;
+	font-weight: bold;
 }
-.address{
-    height: 100px;
+
+.data {
+	float: left;
+	width: 78%;
+	margin-left: 1%;
+	border: none;
+	border: 1px solid #888888;
+	height: 30px;
+	font-size: 15px;
+	letter-spacing: 1.2px;
 }
-.phone{
-    width: 77%;
+
+.profile {
+	width: 13%;
+	background-color: #FFF;
+	padding-top: 6px;
+	padding-left: 0.7%;
 }
-.btn{
-    width: 3%;
-    height: 30px;
+
+.upload_profile_btn {
+	cursor: pointer;
 }
-.btn:hover{
-    cursor: pointer;
+
+.data1 {
+	margin-top: 7px;
+	border: none;
 }
+
+.address {
+	padding-top: 5px;
+	height: 100px;
+	resize: none;
+}
+
+.phone_item {
+	margin-bottom: 5px;
+}
+
+.phone {
+	padding-left: 1%;
+	width: 31.5%;
+}
+
+.phone_wrapper {
+	width: 80%;
+	float: left;
+	padding-left: 0.2%;
+}
+
+.btn {
+	width: 3%;
+	height: 30px;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.dob {
+	width: 25%;
+	padding-left: 0.8%;
+	font-size: 18px;
+}
+
 .form-group2 .sub-title,
-.diploma{
-    padding-top: 10px;
-    padding-bottom: 30px;
-    float: left;
-    padding-left: 1%;
-    background-color: #CFE2F3;
+.diploma {
+	padding-top: 10px;
+	padding-bottom: 30px;
+	float: left;
+	padding-left: 1%;
+	background-color: #CFE2F3;
 }
-.diploma{
-    float: right;
-    width: 80%;
-    padding-bottom: 10px;
-    border-left: 1px solid #888888;
-    border-right: 1px solid #888888;
+
+.diploma {
+	float: right;
+	margin-right: 1.2%;
+	width: 78%;
+	padding-bottom: 10px;
+	font-size: 20px;
+	font-weight: bold;
 }
-.form-group2 .sub-title{
-    width: 25%;
-    background-color: #FFF;
+
+.form-group2 .sub-title {
+	width: 31.8%;
+	background-color: #FFF;
+	font-weight: bold;
 }
-.sub-title-block{
-    width: 80%;
-    float: right;
+
+.sub-title-block {
+	width: 80%;
+	float: right;
 }
-.uni, .major, .year, .degree{
-    width: 25%;
+
+.uni,
+.major,
+.year,
+.degree {
+	width: 31.8%;
 }
-.program{
-    font-size: 20px;
-    margin-top: 8px;
-    float: left;
-    width: 25%;
+
+.program {
+	font-size: 20px;
+	margin-top: 8px;
+	float: left;
+	width: 25%;
+	margin-left: 1%;
+	font-weight: bold;
 }
-.form-group3{
-    float: right;
-    width: 80%;
+
+.form-group3 {
+	float: right;
+	width: 80%;
 }
-.language, .level{
-    width: 25%;
+
+.language,
+.level {
+	width: 25%;
 }
-.english{
-    width: 100%;
+
+.english,
+.english-data {
+	width: 98%;
+	margin-left: 1%;
+	border-top: 1px solid #888888;
+	padding-bottom: 5px;
 }
-.lang{
-    width: 80%;
-    float: right;
-    border: none;
-    border-top: 1px solid #888888;
+
+.english-data {
+	padding-top: 5px;
+	padding-left: 1%;
+	font-size: 18px;
 }
-.lang-block{
-    width: 80%;
-    float: right;
+
+.lang {
+	width: 80%;
+	float: right;
+	border: none;
 }
-.color{
-    background-color: #CFE2F3;
-    border-left: 1px solid #888888;
-    border-right: 1px solid #888888;
+
+.lang-block {
+	width: 80%;
+	float: right;
 }
-.jobexp{
-    margin-top: 10px;
-    width: 2%;
-    height: 20px;
+
+.color {
+	background-color: #CFE2F3;
+	border-left: 1px solid #888888;
+	border-right: 1px solid #888888;
 }
-.submit-btn{
-    margin-top: 20px;
-    text-align: center;
+
+.jobexp {
+	margin-top: 10px;
+	margin-left: 1%;
+	width: 2%;
+	height: 20px;
 }
+
+.submit-btn {
+	margin-top: 20px;
+	text-align: center;
+}
+
 .create-btn,
-.reset-btn{
-    width: 10%;
-    border: 1px solid #CFE2F3;
-    background-color: purple;
-    padding: 10px;
-    margin-bottom: 20px;
+.reset-btn {
+	width: 10%;
+	border: 1px solid #CFE2F3;
+	background-color: #CFE2F3;
+	padding: 10px;
+	margin-bottom: 20px;
 }
+
+.reset-btn {
+	background-color: #FCE5CD;
+}
+
 .create-btn:hover,
-.reset-btn:hover{
-    cursor: pointer;
+.reset-btn:hover {
+	cursor: pointer;
+}
+
+.text {
+	padding-left: 5px;
+}
+
+i {
+	margin-left: 5px;
+	margin-top: 8px;
+	margin-bottom: 6px;
+}
+
+.profile_upload {
+	height: 0;
+	display: none;
+}
+
+.language_item {
+	margin-top: 5px;
+}
+
+.ebdiv {
+	display: none;
 }
