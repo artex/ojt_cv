@@ -16,7 +16,7 @@
       <div class="form-group clearFix">
         <%= form.label :profile_photo, "Profile Picture", class: "title" %>
         <div class="data profile">
-          <%= form.label :profile_picture, "Upload Profile" , class:"upload_profile_btn"%>
+          <%= form.label :profile_picture, "Upload Profile" , class:"upload_profile_btn"%><span class="upload_profile_btn1"></span>
           <%= form.file_field :profile_picture, class:"profile_upload"%>
         </div>
       </div>
@@ -33,7 +33,7 @@
         <%# phone_no1 %>
         <div class="phone_wrapper">
           <div class="phone_item">
-            <%= form.number_field :phone, class: "data phone" %>
+            <%= form.number_field :phone1, class: "data phone" %>
             <a href="javascript:void(0);" class="add_phone" title="Add field">
               <i class="fas fa-plus"></i>
             </a>
@@ -121,8 +121,8 @@
 
           <div class="language_wrapper">
             <div class="language_item">
-              <%= form.text_field :programming_language, class: "data language text" %>
-              <%= form.text_field :programming_level, class: "data level text" %>
+              <%= form.text_field "programming_language[]", class: "data language text" %>
+              <%= form.text_field "programming_level[]", class: "data level text" %>
               <a href="javascript:void(0);" class="add_language" title="Add field">
                 <i class="fas fa-plus"></i>
               </a>

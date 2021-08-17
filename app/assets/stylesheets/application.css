@@ -13,253 +13,270 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+    font-family: hiramin;
+    src: url(fonts/hiraminpro-w3.otf);
+}
+
+body {
+    font-family: hiramin;
+}
+
 .clearFix:after {
-	content: '';
-	display: block;
-	clear: both;
-	visibility: hidden;
-	font-size: 0;
-	height: 0;
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
 }
 
 .container {
-	width: 70%;
-	margin: 0 auto;
+    width: 70%;
+    margin: 0 auto;
 }
 
 .form-group {
-	padding-top: 10px;
+    padding-top: 10px;
 }
 
 .form-block {
-	padding-bottom: 20px;
-	border: 1px solid #888888;
-	background-color: #F3F3F3;
+    padding-bottom: 20px;
+    border: 1px solid #888888;
+    background-color: #F3F3F3;
 }
 
 .form-title {
-	text-align: center;
-	font-size: 32px;
-	padding: 20px 0;
+    text-align: center;
+    font-size: 32px;
+    padding: 20px 0;
+    font-weight: bold;
 }
 
 .block-title {
-	text-align: left;
-	font-size: 24px;
-	margin: 0;
-	padding: 0;
-	padding: 8px 0;
-	padding-left: 0.7%;
-	background-color: #FCE5CD;
+    text-align: left;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    padding: 8px 0;
+    padding-left: 0.7%;
+    background-color: #FCE5CD;
 }
 
 .title {
-	padding-left: 0.7%;
-	float: left;
-	width: 20%;
-	font-size: 20px;
-	padding-top: 8px;
-	font-weight: bold;
+    padding-left: 0.7%;
+    float: left;
+    width: 20%;
+    font-size: 20px;
+    padding-top: 8px;
+    font-weight: bold;
 }
 
 .data {
-	float: left;
-	width: 78%;
-	margin-left: 1%;
-	border: none;
-	border: 1px solid #888888;
-	height: 30px;
-	font-size: 15px;
-	letter-spacing: 1.2px;
+    float: left;
+    width: 78%;
+    margin-left: 1%;
+    border: none;
+    border: 1px solid #888888;
+    height: 30px;
+    font-size: 15px;
+    letter-spacing: 1.2px;
 }
 
 .profile {
-	width: 13%;
-	background-color: #FFF;
-	padding-top: 6px;
-	padding-left: 0.7%;
+    width: 78%;
+    background-color: #FFF;
+    padding-top: 3px;
 }
 
 .upload_profile_btn {
-	cursor: pointer;
+    border-right: 1px solid #888;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #CFE2F3;
+}
+
+.upload_profile_btn1 {
+    padding-left: 15px;
 }
 
 .data1 {
-	margin-top: 7px;
-	border: none;
+    margin-top: 7px;
+    border: none;
 }
 
 .address {
-	padding-top: 5px;
-	height: 100px;
-	resize: none;
+    padding-top: 5px;
+    height: 100px;
+    resize: none;
 }
 
 .phone_item {
-	margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .phone {
-	padding-left: 1%;
-	width: 31.5%;
+    padding-left: 1%;
+    width: 31.5%;
 }
 
 .phone_wrapper {
-	width: 80%;
-	float: left;
-	padding-left: 0.2%;
+    width: 80%;
+    float: left;
+    padding-left: 0.2%;
 }
 
 .btn {
-	width: 3%;
-	height: 30px;
+    width: 3%;
+    height: 30px;
 }
 
 .btn:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .dob {
-	width: 25%;
-	padding-left: 0.8%;
-	font-size: 18px;
+    width: 25%;
+    padding-left: 0.8%;
+    font-size: 18px;
 }
 
 .form-group2 .sub-title,
 .diploma {
-	padding-top: 10px;
-	padding-bottom: 30px;
-	float: left;
-	padding-left: 1%;
-	background-color: #CFE2F3;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    float: left;
+    padding-left: 1%;
+    background-color: #CFE2F3;
 }
 
 .diploma {
-	float: right;
-	margin-right: 1.2%;
-	width: 78%;
-	padding-bottom: 10px;
-	font-size: 20px;
-	font-weight: bold;
+    float: right;
+    margin-right: 1.2%;
+    width: 78%;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .form-group2 .sub-title {
-	width: 31.8%;
-	background-color: #FFF;
-	font-weight: bold;
+    width: 31.8%;
+    background-color: #FFF;
+    font-weight: bold;
 }
 
 .sub-title-block {
-	width: 80%;
-	float: right;
+    width: 80%;
+    float: right;
 }
 
 .uni,
 .major,
 .year,
 .degree {
-	width: 31.8%;
+    width: 31.8%;
 }
 
 .program {
-	font-size: 20px;
-	margin-top: 8px;
-	float: left;
-	width: 25%;
-	margin-left: 1%;
-	font-weight: bold;
+    font-size: 20px;
+    margin-top: 8px;
+    float: left;
+    width: 25%;
+    margin-left: 1%;
+    font-weight: bold;
 }
 
 .form-group3 {
-	float: right;
-	width: 80%;
+    float: right;
+    width: 80%;
 }
 
 .language,
 .level {
-	width: 25%;
+    width: 25%;
 }
 
 .english,
 .english-data {
-	width: 98%;
-	margin-left: 1%;
-	border-top: 1px solid #888888;
-	padding-bottom: 5px;
+    width: 98%;
+    margin-left: 1%;
+    border-top: 1px solid #888888;
+    padding-bottom: 5px;
 }
 
 .english-data {
-	padding-top: 5px;
-	padding-left: 1%;
-	font-size: 18px;
+    padding-top: 5px;
+    padding-left: 1%;
+    font-size: 18px;
 }
 
 .lang {
-	width: 80%;
-	float: right;
-	border: none;
+    width: 80%;
+    float: right;
+    border: none;
 }
 
 .lang-block {
-	width: 80%;
-	float: right;
+    width: 80%;
+    float: right;
 }
 
 .color {
-	background-color: #CFE2F3;
-	border-left: 1px solid #888888;
-	border-right: 1px solid #888888;
+    background-color: #CFE2F3;
+    border-left: 1px solid #888888;
+    border-right: 1px solid #888888;
 }
 
 .jobexp {
-	margin-top: 10px;
-	margin-left: 1%;
-	width: 2%;
-	height: 20px;
+    margin-top: 10px;
+    margin-left: 1%;
+    width: 2%;
+    height: 20px;
 }
 
 .submit-btn {
-	margin-top: 20px;
-	text-align: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .create-btn,
 .reset-btn {
-	width: 10%;
-	border: 1px solid #CFE2F3;
-	background-color: #CFE2F3;
-	padding: 10px;
-	margin-bottom: 20px;
+    width: 10%;
+    border: 1px solid #CFE2F3;
+    background-color: #CFE2F3;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 .reset-btn {
-	background-color: #FCE5CD;
+    background-color: #FCE5CD;
 }
 
 .create-btn:hover,
 .reset-btn:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .text {
-	padding-left: 5px;
+    padding-left: 5px;
 }
 
 i {
-	margin-left: 5px;
-	margin-top: 8px;
-	margin-bottom: 6px;
+    margin-left: 5px;
+    margin-top: 8px;
+    margin-bottom: 6px;
 }
 
 .profile_upload {
-	height: 0;
-	display: none;
+    height: 0;
+    display: none;
 }
 
 .language_item {
-	margin-top: 5px;
+    margin-top: 5px;
 }
 
 .ebdiv {
-	display: none;
+    display: none;
 }
