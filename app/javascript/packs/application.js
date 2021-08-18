@@ -16,7 +16,7 @@ $(document).ready(function() {
     var maxField = 2;
     var addPhone = $('.add_phone');
     var phoneWrapper = $('.phone_wrapper');
-    var fieldHTML = '<div class="phone_item"><input type="number" class="data phone" name="phone2" value=""/><a href="javascript:void(0);" class="remove_phone"><i class="fas fa-minus"></i></a></div>'; //New input field html 
+    var fieldHTML = '<div class="phone_item"><input type="number" class="data phone" name="phone_no2" value=""/><a href="javascript:void(0);" class="remove_phone"><i class="fas fa-minus"></i></a></div>'; //New input field html 
     var x = 1;
     $(addPhone).click(function() {
         if (x < maxField) {
@@ -28,13 +28,6 @@ $(document).ready(function() {
         e.preventDefault();
         $(this).parent('div').remove();
         x--;
-    });
-});
-$(document).ready(function() {
-    $("#profile_picture").change(function() {
-        $('.upload_profile_btn1').trigger('click');
-        var filename = this.files[0].name;
-        $('.upload_profile_btn1').html(filename);
     });
 });
 

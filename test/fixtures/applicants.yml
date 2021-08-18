@@ -1,0 +1,87 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  100: MyString
+  profile_photo: 
+  255: MyString
+  dob: 2021-08-18 08:55:45
+  phone_no1: 
+  30: MyString
+  phone_no2: 
+  30: MyString
+  email: 
+  100: MyString
+  current_address: 
+  255: MyString
+  hometown_address: 
+  255: MyString
+  bachelor_university: 
+  100: MyString
+  bachelor_year: 
+  100: MyString
+  bachelor_degree: 
+  100: MyString
+  master_university: 
+  100: MyString
+  master_year: 
+  100: MyString
+  master_degree: 
+  100: MyString
+  diploma_name: 
+  100: MyString
+  certificate: 
+  255: MyString
+  programming_language: MyText
+  programming_level: MyText
+  english: MyText
+  japanese: MyText
+  other: MyText
+  internship_info: MyText
+  job_experience: MyText
+  total_exp_year: 1
+  3: MyString
+  comment: MyText
+
+two:
+  name: 
+  100: MyString
+  profile_photo: 
+  255: MyString
+  dob: 2021-08-18 08:55:45
+  phone_no1: 
+  30: MyString
+  phone_no2: 
+  30: MyString
+  email: 
+  100: MyString
+  current_address: 
+  255: MyString
+  hometown_address: 
+  255: MyString
+  bachelor_university: 
+  100: MyString
+  bachelor_year: 
+  100: MyString
+  bachelor_degree: 
+  100: MyString
+  master_university: 
+  100: MyString
+  master_year: 
+  100: MyString
+  master_degree: 
+  100: MyString
+  diploma_name: 
+  100: MyString
+  certificate: 
+  255: MyString
+  programming_language: MyText
+  programming_level: MyText
+  english: MyText
+  japanese: MyText
+  other: MyText
+  internship_info: MyText
+  job_experience: MyText
+  total_exp_year: 1
+  3: MyString
+  comment: MyText
