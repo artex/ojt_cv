@@ -285,3 +285,7 @@ i {
     font-size: 15px;
     margin-left: 10%;
 }
+
+.show_name {
+    padding-left: 100px;
+}

@@ -1,5 +1,4 @@
 <%= form_with model: @applicant, url: url, method: method, class: "main-form" do |form| %>
-
     <%# Personal Information %>
     <div class="form-block">
       <h3 class="block-title">Personal Information</h3>
@@ -17,6 +16,7 @@
       <div class="form-group clearFix">
         <%= form.label :profile_picture, "Profile Picture", class: "title" %>
         <div class="data profile1">
+          <%= form.label :profile_photo,"Upload Profile" %><span class="show_name"></span>
           <%= form.file_field :profile_photo, class:"upload-profile-btn profile"%>
         </div>
         <% if @applicant.errors[:profile_photo].any? %>
@@ -161,8 +161,8 @@
 
           <div class="language_wrapper">
             <div class="language_item">
-              <%= form.text_field "programming_language[]", class: "data language text" %>
-              <%= form.text_field "programming_level[]", class: "data level text" %>
+              <%= form.text_field "programming['language']", class: "data language text" %>
+              <%= form.text_field "programming['level']", class: "data level text" %>
               <a href="javascript:void(0);" class="add_language" title="Add field">
                 <i class="fas fa-plus"></i>
               </a>
@@ -259,3 +259,4 @@
     </div>
     
   <% end %>
+  
