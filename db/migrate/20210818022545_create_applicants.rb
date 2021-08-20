@@ -16,9 +16,7 @@ class CreateApplicants < ActiveRecord::Migration[6.1]
       t.string :master_year, varchar: 100
       t.string :master_degree, varchar: 100
       t.string :diploma_name, varchar: 100
-      t.string :certificate, varchar:255
-      t.text :programming_language
-      t.text :programming_level
+      t.string :certificate, varchar: 255
       t.text :english
       t.text :japanese
       t.text :other
@@ -27,6 +25,7 @@ class CreateApplicants < ActiveRecord::Migration[6.1]
       t.integer :total_exp_year, nvarchar: 3
       t.text :comment
       t.timestamps
+      t.text :programming
     end
   end
 end

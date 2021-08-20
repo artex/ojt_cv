@@ -3,6 +3,7 @@
 <br>
 <br>
 <br>
+<%= @applicant.inspect %>
 <span>Name =</span><%= @applicant[:name]%> <br>
 <span>profile_phto =</span><%= @applicant[:profile_phto]%> <br>
 <span>DOB =</span><%= @applicant[:dob]%> <br>
@@ -19,8 +20,10 @@
 <span>Master Degree =</span><%= @applicant[:master_degree]%> <br>
 <span>Diploma Name =</span><%= @applicant[:diploma_name]%> <br>
 <span>Certificates =</span><%= @applicant[:certificate]%> <br>
-<span>Programming Language =</span><%= @applicant[:programming_language] %> <br>
-<span>Programming Level =</span><%= @applicant[:programming_level]%><br>
+<span>Programming  =</span>
+</span><%= @applicant[:programming]%>
+ <br>
+
 <span>English Level =</span><%= @applicant[:english]%> <br>
 <span>Japanese Level =</span><%= @applicant[:japanese]%> <br>
 <span>Other Level =</span><%= @applicant[:other]%> <br>

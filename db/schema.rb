@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_18_022545) do
+ActiveRecord::Schema.define(version: 2021_08_20_021950) do
 
   create_table "applicants", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -29,8 +29,6 @@ ActiveRecord::Schema.define(version: 2021_08_18_022545) do
     t.string "master_degree"
     t.string "diploma_name"
     t.string "certificate"
-    t.text "programming_language"
-    t.text "programming_level"
     t.text "english"
     t.text "japanese"
     t.text "other"
@@ -40,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_08_18_022545) do
     t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "programming"
   end
 
 end

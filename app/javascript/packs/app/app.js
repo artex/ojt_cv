@@ -18,7 +18,8 @@ $(document).ready(function() {
 
 });
 $(document).ready(function() {
-    $("#profile_photo").change(function() {
+    var test = $('.upload-profile-btn');
+    $(test).change(function() {
         var filename = this.files[0].name;
         $('.show_name').html(filename);
     });
@@ -31,9 +32,13 @@ $(document).ready(function() {
     var x = 1;
     $(addLanguage).click(function() {
         if (x < maxField) {
-            var fieldHTML = '<div class="language_item"><input type="text" class="data language text" name="programming_language[]" value=""/><input type="text" class="data level text" name="programming_level[]" value=""/><a href="javascript:void(0);" class="remove_phone"><i class="fas fa-minus"></i></a></div>'; //New input field html
+            var fieldHTML = '<div class="language_item"><input type="text" class="data language text" name="applicant[programming[][language]]" ' +
+                'value=""/><input type="text" class="data level text" name="applicant[programming[][level]]" value=""/><a href="javascript:void(0);" class="remove_phone">' +
+                '<i class="fas fa-minus"></i></a></div>'; //New input field html
             x++;
+
             $(languageWrapper).append(fieldHTML);
+            count++;
         }
     });
 
@@ -41,6 +46,7 @@ $(document).ready(function() {
         e.preventDefault();
         $(this).parent('div').remove();
         // $(".language_wrapper div:nth-last-of-type(1)").remove();
+        count--;
         x--;
     });
 });

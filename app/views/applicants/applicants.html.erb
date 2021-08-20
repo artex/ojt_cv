@@ -165,8 +165,8 @@
 
           <div class="language_wrapper">
             <div class="language_item">
-              <%= form.text_field "programming_language['language']", class: "data language text" %>
-              <%= form.text_field "programming_level['level']", class: "data level text" %>
+              <%= form.text_field "programming[][language]", class: "data language text" %>
+              <%= form.text_field "programming[][level]", class: "data level text" %>
               <a href="javascript:void(0);" class="add_language" title="Add field">
                 <i class="fas fa-plus"></i>
               </a>
