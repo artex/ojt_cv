@@ -3,14 +3,19 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.new
   end
   def confirm
-    # render plain: params[:applicant][:programming][:"1"][:"'language'"]
-    # render plain: @var
     @applicant = Applicant.new(form_params)
-    
+    name = params[:applicant][:profile_photo].original_filename
+    user_name = params[:applicant][:name]
+    path = File.join("app", "assets", "images" , "upload", user_name+name)
+    File.open(path, "wb") { |f| f.write(params[:applicant][:profile_photo].read) }
     if @applicant.valid? == true
     else
       render :applicants
     end
+  end
+  def save
+    applicant = params[:applicant]
+    render plain: applicant
   end
 
   private

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     collection do
       get :new_form, to: "applicants#applicants"
       post :confirm
+      post :save
     end
   end
   get '/index', to: 'testing#index'

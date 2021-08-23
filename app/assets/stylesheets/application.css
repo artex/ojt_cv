@@ -85,13 +85,13 @@ body {
 }
 
 .profile {
-    padding-left: 0.6%;
+    height: 0;
 }
 
 .profile1 {
+    padding-top: 3px;
     width: 78%;
     background-color: #FFF;
-    padding-top: 3px;
 }
 
 .upload_profile_btn {
@@ -280,12 +280,78 @@ i {
 }
 
 .error-msg {
-    display: block;
+    float: right;
+    width: 80%;
     color: red;
-    font-size: 15px;
-    margin-left: 10%;
+    font-size: 16px;
+    padding-left: 2%;
 }
 
 .show_name {
-    padding-left: 100px;
+    display: inline-block;
+    padding-left: 2%;
+}
+
+.profile_btn {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #CFE2F3;
+}
+
+.confirm-container {
+    background-color: #F3F3F3;
+}
+
+.confirm-header {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #F51B5C;
+}
+
+.confirm-label {
+    float: left;
+    width: 25%;
+    background-color: #FFF;
+    color: #F51B5C;
+}
+
+.confirm {
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid #F51B5C;
+}
+
+.confirm-data {
+    float: right;
+    width: 75%;
+}
+
+.confirm-label span {
+    padding: 10px;
+    padding-left: 10%;
+    height: 50px;
+    display: block;
+    border-bottom: 1px solid #F51B5C;
+}
+
+.c-data {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-bottom: 1px solid #F51B5C;
+    background-color: #FCE5CD;
+    color: #F51B5C;
+}
+
+.back-btn {
+    border: 1px solid #000000;
+    padding: 5px;
+}
+
+.confirm-btn {
+    border: 1px solid #000000;
+    padding: 5px;
 }

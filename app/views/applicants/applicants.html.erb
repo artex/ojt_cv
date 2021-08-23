@@ -8,37 +8,43 @@
       <h3 class="block-title">Personal Information</h3>
 
       <%# name %>
+      
       <div class="form-group clearFix">
+      <% if @applicant.errors[:name].any? %>
+          <div class="error-msg">This Field <%= @applicant.errors[:name][0] %></div>
+      <% end %>
         <%= form.label :name, "Name", class: "title" %>
         <%= form.text_field :name, class: "data text" %>
-        <% if @applicant.errors[:name].any? %>
-          <div class="error-msg">This Field <%= @applicant.errors[:name][0] %></div>
-        <% end %>
       </div>
+      
 
       <%# profile photo %>
+       
       <div class="form-group clearFix">
         <%= form.label :profile_picture, "Profile Picture", class: "title" %>
-        <div class="data profile1">
-          <%= form.label :profile_photo,"Upload Profile" %><span class="show_name"></span>
-          <%= form.file_field :profile_photo, class:"upload-profile-btn profile"%>
-        </div>
         <% if @applicant.errors[:profile_photo].any? %>
           <div class="error-msg">This Field <%= @applicant.errors[:profile_photo][0] %></div>
         <% end %>
+        <div class="data profile1">
+          <%= form.label :profile_photo,"Upload Profile", class: "profile_btn" %><span class="show_name"></span>
+          <%= form.file_field :profile_photo, class:"upload-profile-btn profile"%>
+        </div>
       </div>
 
       <%# Date of Birth %>
       <div class="form-group clearFix">
-        <%= form.label :dob, "Date of Birth", class: "title" %>
-        <%= form.date_field :dob,class: "data dob"%>
-        <% if @applicant.errors[:dob].any? %>
+      <% if @applicant.errors[:dob].any? %>
           <div class="error-msg">This Field <%= @applicant.errors[:dob][0] %></div>
         <% end %>
+        <%= form.label :dob, "Date of Birth", class: "title" %>
+        <%= form.date_field :dob,class: "data dob"%>
       </div>
 
       <%# Phone %>
       <div class="form-group clearFix">
+        <% if @applicant.errors[:phone_no1].any? %>
+          <div class="error-msg">This <%= @applicant.errors[:phone_no1][0] %></div>
+        <% end %>
         <%= form.label :phone_no, "Phone Number", class: "title" %>
         <%# phone_no1 %>
         <div class="phone_wrapper">
@@ -49,36 +55,34 @@
             </a>
           </div>
         </div>
-        <% if @applicant.errors[:phone_no1].any? %>
-          <div class="error-msg">This <%= @applicant.errors[:phone_no1][0] %></div>
-        <% end %>
       </div>
 
       <%# Email %>
       <div class="form-group clearFix">
-        <%= form.label :email, "Email", class: "title" %>
-        <%= form.text_field :email, class: "data text"%>
         <% if @applicant.errors[:email].any? %>
           <div class="error-msg">This <%= @applicant.errors[:email][0] %></div>
         <% end %>
+        <%= form.label :email, "Email", class: "title" %>
+        <%= form.text_field :email, class: "data text"%>
       </div>
 
       <%# Current Address %>
       <div class="form-group clearFix">
-        <%= form.label :current_address, "Current Address", class: "title" %>
-        <%= form.text_area :current_address, class: "data address text"%>
         <% if @applicant.errors[:current_address].any? %>
           <div class="error-msg">This <%= @applicant.errors[:current_address][0] %></div>
         <% end %>
+        <%= form.label :current_address, "Current Address", class: "title" %>
+        <%= form.text_area :current_address, class: "data address text"%>
+        
       </div>
 
       <%# Hometown Address %>
       <div class="form-group clearFix">
-        <%= form.label :hometown_address, "Hometown Address", class: "title" %>
-        <%= form.text_area :hometown_address, class: "data address text"%>
         <% if @applicant.errors[:hometown_address].any? %>
           <div class="error-msg">This <%= @applicant.errors[:hometown_address][0] %></div>
         <% end %>
+        <%= form.label :hometown_address, "Hometown Address", class: "title" %>
+        <%= form.text_area :hometown_address, class: "data address text"%>
       </div>
 
     </div>
