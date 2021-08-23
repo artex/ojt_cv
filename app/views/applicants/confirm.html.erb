@@ -1,10 +1,11 @@
 <div class="confirm-container">
     <h2 class="confirm-header">Please Check Your data before Send!</h2>
+    
 <%= form_with model: @applicant, url: save_applicants_path(@applicant), class: "main-form" do |form| %>
     <div class="confirm clearFix">
         <div class="confirm-label">
             <span>Name </span>
-            <span>profile_phto </span>
+            <span class="c-data3">profile_phto </span>
             <span>DOB </span>
             <span>Phone 1 </span>
             <span>Phone 2 </span>
@@ -30,7 +31,8 @@
         </div>
         <div class ="confirm-data">
             <%= form.text_field :name, value: @applicant[:name], class: "c-data", :readonly => true %>
-            <%= form.text_field :profile_photo, value: @applicant[:profile_photo], class: "c-data", :readonly => true %>
+            <div class="c-data2"><%= image_tag("#@file_path")%></div>
+            <%= form.text_field :profile_photo, value: @applicant[:profile_photo], class: "c-data invi", :readonly => true %>
             <%= form.text_field :dob, value: @applicant[:dob], class: "c-data", :readonly => true %>
             <%= form.text_field :phone_no1, value: @applicant[:phone_no1], class: "c-data", :readonly => true %>
             <%= form.text_field :phone_no2, value: @applicant[:phone_no2], class: "c-data", :readonly => true %>

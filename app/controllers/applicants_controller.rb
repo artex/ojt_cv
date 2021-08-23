@@ -6,9 +6,11 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.new(form_params)
     name = params[:applicant][:profile_photo].original_filename
     user_name = params[:applicant][:name]
-    path = File.join("app", "assets", "images" , "upload", user_name+name)
+    path = File.join("app", "assets" , "images", user_name+name)
     File.open(path, "wb") { |f| f.write(params[:applicant][:profile_photo].read) }
+    @file_path = user_name+name
     if @applicant.valid? == true
+      # render plain: @file_path
     else
       render :applicants
     end
