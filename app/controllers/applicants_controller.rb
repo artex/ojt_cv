@@ -4,20 +4,23 @@ class ApplicantsController < ApplicationController
   end
   def confirm
     @applicant = Applicant.new(form_params)
-    name = params[:applicant][:profile_photo].original_filename
-    user_name = params[:applicant][:name]
-    path = File.join("app", "assets" , "images", user_name+name)
-    File.open(path, "wb") { |f| f.write(params[:applicant][:profile_photo].read) }
-    @file_path = user_name+name
+    
     if @applicant.valid? == true
+      name = params[:applicant][:profile_photo].original_filename
+      user_name = params[:applicant][:name]
+      path = File.join("app", "assets" , "images", user_name+name)
+      File.open(path, "wb") { |f| f.write(params[:applicant][:profile_photo].read) }
+      @file_path = user_name+name
       # render plain: @file_path
     else
       render :applicants
     end
   end
   def save
-    applicant = params[:applicant]
-    render plain: applicant
+    # render plain: params
+    @form = Applicant.new(save_params)
+    @form.save
+    # @is_save_form = form.save
   end
 
   private
@@ -81,5 +84,10 @@ class ApplicantsController < ApplicationController
       })
       # params.require(:test_obj).permit(:programming)
     params.require(:test_obj).permit(:name, :profile_photo, :dob, :phone_no1, :phone_no2, :email, :current_address, :hometown_address, :bachelor_university, :bachelor_year, :bachelor_degree, :master_university, :master_year, :master_degree, :diploma_name, :certificate, :programming, :english, :japanese, :other, :internship_info, :job_experience, :total_exp_year, :comment, :created_by, :updated_by)
+  end
+
+  private
+  def save_params
+    params.require(:applicant).permit(:name, :profile_photo, :dob, :phone_no1, :phone_no2, :email, :current_address, :hometown_address, :bachelor_university, :bachelor_year, :bachelor_degree, :master_university, :master_year, :master_degree, :diploma_name, :certificate, :programming, :english, :japanese, :other, :internship_info, :job_experience, :total_exp_year, :comment, :created_by, :updated_by)
   end
 end
