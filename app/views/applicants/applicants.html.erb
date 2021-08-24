@@ -11,7 +11,7 @@
       
       <div class="form-group clearFix">
       <% if @applicant.errors[:name].any? %>
-          <div class="error-msg">This Field <%= @applicant.errors[:name][0] %></div>
+          <div class="error-msg">Name Field <%= @applicant.errors[:name][0] %></div>
       <% end %>
         <%= form.label :name, "Name", class: "title" %>
         <%= form.text_field :name, class: "data text" %>
@@ -23,7 +23,7 @@
       <div class="form-group clearFix">
         <%= form.label :profile_picture, "Profile Picture", class: "title" %>
         <% if @applicant.errors[:profile_photo].any? %>
-          <div class="error-msg">This Field <%= @applicant.errors[:profile_photo][0] %></div>
+          <div class="error-msg">Profile Picture Field <%= @applicant.errors[:profile_photo][0] %></div>
         <% end %>
         <div class="data profile1">
           <%= form.label :profile_photo,"Upload Profile", class: "profile_btn" %><span class="show_name"></span>
@@ -34,7 +34,7 @@
       <%# Date of Birth %>
       <div class="form-group clearFix">
       <% if @applicant.errors[:dob].any? %>
-          <div class="error-msg">This Field <%= @applicant.errors[:dob][0] %></div>
+          <div class="error-msg">Date Of Birth Field <%= @applicant.errors[:dob][0] %></div>
         <% end %>
         <%= form.label :dob, "Date of Birth", class: "title" %>
         <%= form.date_field :dob,class: "data dob"%>
@@ -43,7 +43,7 @@
       <%# Phone %>
       <div class="form-group clearFix">
         <% if @applicant.errors[:phone_no1].any? %>
-          <div class="error-msg">This <%= @applicant.errors[:phone_no1][0] %></div>
+          <div class="error-msg">Phone No <%= @applicant.errors[:phone_no1][0] %></div>
         <% end %>
         <%= form.label :phone_no, "Phone Number", class: "title" %>
         <%# phone_no1 %>
@@ -60,7 +60,7 @@
       <%# Email %>
       <div class="form-group clearFix">
         <% if @applicant.errors[:email].any? %>
-          <div class="error-msg">This <%= @applicant.errors[:email][0] %></div>
+          <div class="error-msg">Email <%= @applicant.errors[:email][0] %></div>
         <% end %>
         <%= form.label :email, "Email", class: "title" %>
         <%= form.text_field :email, class: "data text"%>
@@ -69,7 +69,7 @@
       <%# Current Address %>
       <div class="form-group clearFix">
         <% if @applicant.errors[:current_address].any? %>
-          <div class="error-msg">This <%= @applicant.errors[:current_address][0] %></div>
+          <div class="error-msg">Current_address <%= @applicant.errors[:current_address][0] %></div>
         <% end %>
         <%= form.label :current_address, "Current Address", class: "title" %>
         <%= form.text_area :current_address, class: "data address text"%>
@@ -79,7 +79,7 @@
       <%# Hometown Address %>
       <div class="form-group clearFix">
         <% if @applicant.errors[:hometown_address].any? %>
-          <div class="error-msg">This <%= @applicant.errors[:hometown_address][0] %></div>
+          <div class="error-msg">Hometown Address <%= @applicant.errors[:hometown_address][0] %></div>
         <% end %>
         <%= form.label :hometown_address, "Hometown Address", class: "title" %>
         <%= form.text_area :hometown_address, class: "data address text"%>
@@ -142,7 +142,7 @@
         <%= form.label :diploma_name, "Diploma Name", class: "title" %>
         <%= form.text_field :diploma_name, class: "data text" %>
         <% if @applicant.errors[:diploma_name].any? %>
-            <div class="error-msg">This Field <%= @applicant.errors[:diploma_name][0] %></div>
+            <div class="error-msg">Diploma Name <%= @applicant.errors[:diploma_name][0] %></div>
           <% end %>
       </div>
 
@@ -151,7 +151,7 @@
         <%= form.label :certificate, "Other Certification", class: "title" %>
         <%= form.text_field :certificate, class: "data text" %>
         <% if @applicant.errors[:certificate].any? %>
-            <div class="error-msg">This Field <%= @applicant.errors[:certificate][0] %></div>
+            <div class="error-msg">Certification <%= @applicant.errors[:certificate][0] %></div>
           <% end %>
       </div>
 
@@ -169,15 +169,15 @@
 
           <div class="language_wrapper">
             <div class="language_item">
-              <%= form.text_field "programming[][language]", class: "data language text" %>
-              <%= form.text_field "programming[][level]", class: "data level text" %>
+              <%= form.text_field "programming[][language]", class: "data language text", placeholder: "Ruby" %>
+              <%= form.text_field "programming[][level]", class: "data level text", placeholder: "A" %>
               <a href="javascript:void(0);" class="add_language" title="Add field">
                 <i class="fas fa-plus"></i>
               </a>
             </div>
           </div>
-          <% if @applicant.errors[:master_degree].any? %>
-            <div class="error-msg">This Field <%= @applicant.errors[:master_degree][0] %></div>
+          <% if @applicant.errors[:programming].any? %>
+            <div class="error-msg"> Programming <%= @applicant.errors[:master_degree][0] %></div>
           <% end %>
           <div>
             
@@ -193,7 +193,7 @@
           <%= form.label :english, "English", class: "title english color" %>
           <%= form.text_field :english, class: "data english-data", placeholder: "level text" %>
           <% if @applicant.errors[:english].any? %>
-            <div class="error-msg">This Field <%= @applicant.errors[:english][0] %></div>
+            <div class="error-msg"> This Field <%= @applicant.errors[:english][0] %></div>
           <% end %>
           <%# Japanese Skill %>
           <%= form.label :japanese, "Japanese", class: "title english color" %>
