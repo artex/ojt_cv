@@ -69,7 +69,7 @@
       <%# Current Address %>
       <div class="form-group clearFix">
         <% if @applicant.errors[:current_address].any? %>
-          <div class="error-msg">Current_address <%= @applicant.errors[:current_address][0] %></div>
+          <div class="error-msg">Current Address <%= @applicant.errors[:current_address][0] %></div>
         <% end %>
         <%= form.label :current_address, "Current Address", class: "title" %>
         <%= form.text_area :current_address, class: "data address text"%>
