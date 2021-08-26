@@ -41,7 +41,7 @@ body {
     padding-top: 10px;
 }
 
-.form-block {
+.form-block-e {
     padding-bottom: 20px;
     border: 1px solid #888888;
     background-color: #F3F3F3;
@@ -65,10 +65,11 @@ body {
 }
 
 .title {
+    display: inline;
     padding-left: 0.7%;
     float: left;
     width: 20%;
-    font-size: 20px;
+    font-size: 18px;
     padding-top: 8px;
     font-weight: bold;
 }
@@ -256,6 +257,10 @@ body {
     background-color: #FCE5CD;
 }
 
+.create-btn {
+    background-color: #F3F3F3;
+}
+
 .create-btn:hover,
 .reset-btn:hover {
     cursor: pointer;
@@ -299,7 +304,7 @@ i {
 }
 
 .confirm-container {
-    background-color: #F3F3F3;
+    background-color: #CFE2F3;
 }
 
 .confirm-header {
@@ -313,7 +318,7 @@ i {
 .confirm-label {
     float: left;
     width: 25%;
-    background-color: #FFF;
+    background-color: #F3F3F3;
     color: #F51B5C;
 }
 
@@ -348,7 +353,7 @@ i {
 
 .back-btn {
     padding: 13px 50px;
-    background-color: #F51B5C;
+    background-color: #FCE5CD;
 }
 
 .confirm-btn {
@@ -362,6 +367,7 @@ i {
 
 .c-data2,
 .confirm-label .c-data3 {
+    margin-top: 8px;
     height: 160px;
     border-bottom: 1px solid #F51B5C;
 }
@@ -370,4 +376,49 @@ i {
     height: 150px;
     width: 150px;
     margin-left: 2%;
+}
+
+.login-header {
+    font-size: 28px;
+    font-weight: bold;
+    color: #F51B5C;
+    text-align: center;
+}
+
+.login-data {
+    float: right;
+    width: 60%;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 3%;
+}
+
+.login-container {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px 10px;
+    background-color: #FCE5CD;
+}
+
+.login-btn {
+    cursor: pointer;
+    padding: 10px 50px;
+    border-radius: 15px;
+    background-color: #CFE2F3;
+}
+
+.star-title {
+    position: relative;
+    left: 2%;
+}
+
+.star,
+.star2 {
+    color: red;
+    position: absolute;
+    top: 4px;
+    left: -2%;
+    transform: scale(0.6, 0.6);
 }

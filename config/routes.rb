@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'login/login'
   get 'testing/index'
   root 'applicants#applicants'
   # post '/confirm', to: "applicants#confirm"
@@ -11,4 +12,8 @@ Rails.application.routes.draw do
   end
   get '/index', to: 'testing#index'
   post '/conf', to: 'testing#conf'
+  get '/dashboard', to: 'login#dashboard'
+  get '/login', to: 'login#login'
+  post '/login', to: 'login#actionLogin'
+  get '/logout', to: 'login#logout'
 end

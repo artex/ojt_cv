@@ -3,6 +3,7 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.new
   end
   def confirm
+
     @applicant = Applicant.new(form_params)
     
     if @applicant.valid? == true
@@ -13,7 +14,15 @@ class ApplicantsController < ApplicationController
       @file_path = user_name+name
       # render plain: @file_path
     else
+      @test = params[:applicant][:programming]
+      # render plain: @test[0]
       render :applicants
+      # if @applicant[:profile_photo]
+      #   @name = params[:applicant][:profile_photo].original_filename
+      #   render :applicants
+      # else
+      #    render :applicants
+      # end
     end
   end
   def save

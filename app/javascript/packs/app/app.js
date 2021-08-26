@@ -26,7 +26,7 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
     var count = 2
-    var maxField = 6;
+    var maxField = 5;
     var addLanguage = $('.add_language');
     var languageWrapper = $('.language_wrapper');
     var x = 1;
