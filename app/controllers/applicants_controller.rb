@@ -15,14 +15,8 @@ class ApplicantsController < ApplicationController
       # render plain: @file_path
     else
       @test = params[:applicant][:programming]
-      # render plain: @test[0]
-      render :applicants
-      # if @applicant[:profile_photo]
-      #   @name = params[:applicant][:profile_photo].original_filename
-      #   render :applicants
-      # else
-      #    render :applicants
-      # end
+      render :applicants 
+
     end
   end
   def save
