@@ -3,9 +3,9 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.new
   end
   def confirm
-
+    # render plain: params
     @applicant = Applicant.new(form_params)
-    
+
     if @applicant.valid? == true
       name = params[:applicant][:profile_photo].original_filename
       user_name = params[:applicant][:name]
@@ -15,6 +15,7 @@ class ApplicantsController < ApplicationController
       # render plain: @file_path
     else
       @test = params[:applicant][:programming]
+      @exp = form_params[:is_exist_job_exp]
       render :applicants 
 
     end
@@ -47,6 +48,7 @@ class ApplicantsController < ApplicationController
     @english = params[:applicant][:english]
     @japanese = params[:applicant][:japanese]
     @other = params[:applicant][:other]
+    @exp = params[:applicant][:is_exist_job_exp]
     @internship_info = params[:applicant][:internship_info]
     @job_experience = params[:applicant][:job_experience]
     @total_exp_year = params[:applicant][:total_exp_year]
@@ -78,6 +80,7 @@ class ApplicantsController < ApplicationController
           english: @english,
           japanese: @japanese,
           other: @other,
+          is_exist_job_exp: @exp,
           internship_info: @internship_info,
           job_experience: @job_experience,
           total_exp_year: @total_exp_year,
@@ -86,11 +89,11 @@ class ApplicantsController < ApplicationController
         }
       })
       # params.require(:test_obj).permit(:programming)
-    params.require(:test_obj).permit(:name, :profile_photo, :dob, :phone_no1, :phone_no2, :email, :current_address, :hometown_address, :bachelor_university, :bachelor_year, :bachelor_degree, :master_university, :master_year, :master_degree, :diploma_name, :certificate, :programming, :english, :japanese, :other, :internship_info, :job_experience, :total_exp_year, :comment, :created_by, :updated_by)
+    params.require(:test_obj).permit(:name, :profile_photo, :dob, :phone_no1, :phone_no2, :email, :current_address, :hometown_address, :bachelor_university, :bachelor_year, :bachelor_degree, :master_university, :master_year, :master_degree, :diploma_name, :certificate, :programming, :english, :japanese, :other,:is_exist_job_exp, :internship_info, :job_experience, :total_exp_year, :comment, :created_by, :updated_by)
   end
 
   private
   def save_params
-    params.require(:applicant).permit(:name, :profile_photo, :dob, :phone_no1, :phone_no2, :email, :current_address, :hometown_address, :bachelor_university, :bachelor_year, :bachelor_degree, :master_university, :master_year, :master_degree, :diploma_name, :certificate, :programming, :english, :japanese, :other, :internship_info, :job_experience, :total_exp_year, :comment, :created_by, :updated_by)
+    params.require(:applicant).permit(:name, :profile_photo, :dob, :phone_no1, :phone_no2, :email, :current_address, :hometown_address, :bachelor_university, :bachelor_year, :bachelor_degree, :master_university, :master_year, :master_degree, :diploma_name, :certificate, :programming, :english, :japanese, :other,:is_exist_job_exp, :internship_info, :job_experience, :total_exp_year, :comment, :created_by, :updated_by)
   end
 end

@@ -64,10 +64,3 @@ $(document).ready(function() {
         location.reload();
     });
 });
-
-
-$(document).ready(function() {
-    $(".abcdef").submit(function() {
-        $(".abcdef").select("params[:applicant][:profile_photo].path");
-    });
-});

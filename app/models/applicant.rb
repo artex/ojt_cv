@@ -1,7 +1,8 @@
 class Applicant < ApplicationRecord
     validates :name, presence: true,  length: { maximum: 100 }
     validates :profile_photo, presence: true
-    validates :dob, presence: true 
+    # validates_acceptance_of :profile_photo, :content_type => /^image\/(png|gif|jpeg)/
+    validates :dob, presence: true
     validates :phone_no1, presence: true, length: { maximum: 30 },:numericality => true, :length => { :minimum => 6, :maximum => 13 }
     validates :phone_no2, length: { maximum: 13 }
     validates :email, presence: true, uniqueness: true, length: { maximum: 100 }, format: { with: URI::MailTo::EMAIL_REGEXP }
@@ -16,4 +17,6 @@ class Applicant < ApplicationRecord
     validates :diploma_name, length: { maximum: 100 }
     validates :certificate, length: { maximum: 255 }
     validates :total_exp_year, length: { maximum: 3 }
+
+    
 end

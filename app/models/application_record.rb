@@ -6,4 +6,5 @@ class ApplicationRecord < ActiveRecord::Base
       errors.add(:dob, "can't be in the future")
     end
   end
+  
 end
