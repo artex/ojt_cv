@@ -5,19 +5,45 @@ class ApplicantsController < ApplicationController
   def confirm
     # render plain: params
     @applicant = Applicant.new(form_params)
-
+    
     if @applicant.valid? == true
-      name = params[:applicant][:profile_photo].original_filename
-      user_name = params[:applicant][:name]
-      path = File.join("app", "assets" , "images", user_name+name)
-      File.open(path, "wb") { |f| f.write(params[:applicant][:profile_photo].read) }
-      @file_path = user_name+name
+      if form_params[:profile_photo]
+        name = params[:applicant][:profile_photo].original_filename
+        user_name = params[:applicant][:name]
+        path = File.join("app", "assets" , "images", user_name+name)
+        File.open(path, "wb") { |f| f.write(params[:applicant][:profile_photo].read) }
+        @file_path = user_name+name
+        if !File.extname(params[:applicant][:profile_photo]).eql?(".png")&&
+          !File.extname(params[:applicant][:profile_photo]).eql?(".jpg")&&
+          !File.extname(params[:applicant][:profile_photo]).eql?(".jpeg")
+          # redirect_to root_path, notice: "Profile Photo should be image type"
+  
+          flash[:notice] = "Profile Photo should be image type"
+          render :applicants 
+        end
+      else
+      end
+      
       # render plain: @file_path
     else
-      @test = params[:applicant][:programming]
-      @exp = form_params[:is_exist_job_exp]
-      render :applicants 
-
+      if form_params[:profile_photo]
+        if !File.extname(params[:applicant][:profile_photo]).eql?(".png")&&
+          !File.extname(params[:applicant][:profile_photo]).eql?(".jpg")&&
+          !File.extname(params[:applicant][:profile_photo]).eql?(".jpeg")
+          # redirect_to root_path, notice: "Profile Photo should be image type"
+  
+          flash[:notice] = "Profile Photo should be image type"
+          render :applicants 
+        else
+          @test = params[:applicant][:programming]
+        @exp = form_params[:is_exist_job_exp]
+        render :applicants 
+        end
+      else
+        @test = params[:applicant][:programming]
+        @exp = form_params[:is_exist_job_exp]
+        render :applicants 
+      end
     end
   end
   def save

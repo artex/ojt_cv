@@ -422,3 +422,8 @@ i {
     left: -2%;
     transform: scale(0.6, 0.6);
 }
+
+.error-noti {
+    color: red;
+    margin-left: 22%;
+}

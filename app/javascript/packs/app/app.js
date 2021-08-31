@@ -54,8 +54,10 @@ $(document).ready(function() {
     $(".jobexp").change(function() {
         if (this.checked) {
             $(".ebdiv").css("display", "block");
+            $(".ebdiv1").css("display", "block");
         } else {
             $(".ebdiv").css("display", "none");
+            $(".ebdiv1").css("display", "none");
         }
     });
 });
