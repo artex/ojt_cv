@@ -21,13 +21,12 @@
         <span>Diploma Name </span>
         <span>Certificates </span>
         <span>Programming  </span>
-        <span>English Level </span>
-        <span>Japanese Level </span>
-        <span>Other Level </span>
-        <span>Internship Info </span>
+        <span class="c-data5">English Level </span>
+        <span class="c-data5">Japanese Level </span>
+        <span class="c-data5">Other Level </span>
+        <span class="c-data5">Internship Info </span>
         <span>Job Exp </span>
         <span>Total Exp Year </span>
-        <span>Comment </span>
       </div>
       <div class ="confirm-data">
         <%= form.text_field :name, value: @applicant[:name], class: "c-data", :readonly => true %>
@@ -48,14 +47,13 @@
         <%= form.text_field :diploma_name, value: @applicant[:diploma_name], class: "c-data", :readonly => true %>
         <%= form.text_field :certificate, value: @applicant[:certificate], class: "c-data", :readonly => true %>
         <%= form.text_field :programming, value: @applicant[:programming], class: "c-data", :readonly => true %>
-        <%= form.text_field :english, value: @applicant[:english], class: "c-data", :readonly => true %>
-        <%= form.text_field :japanese, value: @applicant[:japanese], class: "c-data", :readonly => true %>
-        <%= form.text_field :other, value: @applicant[:other], class: "c-data", :readonly => true %>
+        <%= form.text_area :english, value: @applicant[:english], class: "c-data4 address1", :readonly => true %>
+        <%= form.text_area :japanese, value: @applicant[:japanese], class: "c-data6 address1", :readonly => true %>
+        <%= form.text_area :other, value: @applicant[:other], class: "c-data6 address1", :readonly => true %>
         <%= form.text_field :is_exist_job_exp, value: @applicant[:is_exist_job_exp], class: "c-data invi", :readonly => true %>
-        <%= form.text_field :internship_info, value: @applicant[:internship_info], class: "c-data", :readonly => true %>
-        <%= form.text_field :job_experience, value: @applicant[:job_experience], class: "c-data", :readonly => true %>
+        <%= form.text_area :internship_info, value: @applicant[:internship_info], class: "c-data6 address1", :readonly => true %>
+        <%= form.text_field :job_experience, value: @applicant[:job_experience], class: "c-data7", :readonly => true %>
         <%= form.text_field :total_exp_year, value: @applicant[:total_exp_year], class: "c-data", :readonly => true %>
-        <%= form.text_field :comment, value: @applicant[:comment], class: "c-data", :readonly => true %>
       </div>
     </div>
     <div class="submit-btn">

@@ -504,8 +504,7 @@ i {
 .c-data4:hover,
 .c-data6:hover,
 .c-data7:hover {
-    font-size: 25px;
-    cursor: zoom-in;
+    cursor: default;
 }
 
 .c-data2 {
