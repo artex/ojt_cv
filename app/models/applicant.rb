@@ -3,7 +3,7 @@ class Applicant < ApplicationRecord
     # validates :profile_photo, presence: true
     # validates_attachment :profile_photo, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }, if: Proc.new {|a| a.attachment.present? }
     validates :dob, presence: true
-    validates :phone_no1, presence: true, length: { maximum: 30 },:numericality => true, :length => { :minimum => 6, :maximum => 13 }
+    validates :phone_no1, presence: true,:numericality => true, :length => { :minimum => 6, :maximum => 13 }
     validates :phone_no2, length: { maximum: 13 }
     validates :email, presence: true, uniqueness: true, length: { maximum: 100 }, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :current_address, presence: true, length: { maximum: 255 }

@@ -1,69 +1,56 @@
 <div class="container">
   <h2 class="form-title">OJT Application Form</h2>
   
-
   <%= form_with model: @applicant, url: confirm_applicants_path(@applicant), class: "main-form" do |form| %>
     <%# Personal Information %>
     <div class="form-block-e clearFix">
       <h3 class="block-title">Personal Information</h3>
 
       <%# name %>
-      
       <div class="form-group clearFix">
         <% if @applicant.errors[:name].any? %>
             <div class="error-msg">Name Field <%= @applicant.errors[:name][0] %></div>
         <% end %>
-
         <div class="star-title">
             <i class="fa-thin fa-asterisk star"></i>
-          
           <%= form.label :name, "Name", class: "title" %>
         </div>
         <%= form.text_field :name, class: "data text" %>
       </div>
-      
 
       <%# profile photo %>
-       
       <div class="form-group clearFix">
         <div class="star-title">
-          
           <%= form.label :profile_picture, "Profile Picture", class: "title" %>
         </div>
-        
         <% if @applicant.errors[:profile_photo].any? %>
           <div class="error-msg">Profile Picture Field <%= @applicant.errors[:profile_photo][0] %></div>
         <% end %>
         <% if notice %>
           <%= render 'layouts/alert' %>
         <% end %>
-          <div class="data profile1">
-            <%= form.label :profile_photo,"Upload Profile", class: "profile_btn" %>
-            <span class="show_name">
-            
-            </span>
-            <% if !@applicant[:profile_photo] %>
-              <%= form.file_field :profile_photo, class:"upload-profile-btn profile", accept: 'image/png,image/gif,image/jpeg' %>
-            <% end %>
-            <% if @applicant[:profile_photo] %>
-              <%= form.file_field :profile_photo, class:"upload-profile-btn profile",accept: 'image/png,image/gif,image/jpeg', value: File.file?(params[:applicant][:profile_photo]) %>
-            <% end %>
-          </div>
+        <div class="data profile1">
+          <%= form.label :profile_photo,"Upload Profile", class: "profile_btn" %>
+          <span class="show_name">
+          </span>
+          <% if !@applicant[:profile_photo] %>
+            <%= form.file_field :profile_photo, class:"upload-profile-btn profile", accept: 'image/png,image/gif,image/jpeg' %>
+          <% end %>
+          <% if @applicant[:profile_photo] %>
+            <%= form.file_field :profile_photo, class:"upload-profile-btn profile",accept: 'image/png,image/gif,image/jpeg', value: File.file?(params[:applicant][:profile_photo]) %>
+          <% end %>
+        </div>
       </div>
 
       <%# Date of Birth %>
       <div class="form-group clearFix">
-      <% if @applicant.errors[:dob].any? %>
+        <% if @applicant.errors[:dob].any? %>
           <div class="error-msg">Date Of Birth Field <%= @applicant.errors[:dob][0] %></div>
         <% end %>
         <div class="star-title">
-          
-            <i class="fa-thin fa-asterisk star"></i>
-
+          <i class="fa-thin fa-asterisk star"></i>
           <%= form.label :dob, "Date of Birth", class: "title" %>
-          
         </div>
-        
         <%= form.date_field :dob,class: "data dob"%>
       </div>
 
@@ -76,31 +63,37 @@
           <div class="error-msg">Phone No.2 <%= @applicant.errors[:phone_no2][0] %></div>
         <% end %>
         <div class="star-title">
-         
-            <i class="fa-thin fa-asterisk star"></i>
-
+          <i class="fa-thin fa-asterisk star"></i>
           <%= form.label :phone_no, "Phone Number", class: "title" %>
         </div>
         
-        <%# phone_no1 %>
-        <div class="phone_wrapper">
-          <div class="phone_item clearFix">
-            <%= form.number_field :phone_no1, class: "data phone" %>
-            <% if !@applicant[:phone_no2]%>
-            <a href="javascript:void(0);" class="add_phone" title="Add field">
-              <i class="fas fa-plus"></i>
-            </a>
-            <% end %>
+        <%# Both Phone1 and Phone2 %>
+        <% if @applicant[:phone_no2]%>
+          <div class="phone_wrapper">
+            <div class="phone_item clearFix">
+              <%= form.number_field :phone_no1, class: "data phone" %>
+              <a href="javascript:void(0);" class="add_phone2" title="Add field">
+                <i class="fas fa-plus"></i>
+              </a>
+            </div>
+            <div class="phone_item clearFix">
+              <%= form.number_field :phone_no2, class: "data phone" %>
+              <a href="javascript:void(0);" class="remove_phone" title="Add field">
+                <i class="fas fa-minus"></i>
+              </a>
+            </div>
           </div>
-          <% if @applicant[:phone_no2]%>
-          <div class="phone_item clearFix">
-            <%= form.number_field :phone_no2, class: "data phone" %>
-            <a href="javascript:void(0);" class="remove_phone">
-              <i class="fas fa-minus"></i>
-            </a>
+        <%# Only Phone 1 %>
+        <% else %>
+          <div class="phone_wrapper">
+            <div class="phone_item clearFix">
+              <%= form.number_field :phone_no1, class: "data phone" %>
+              <a href="javascript:void(0);" class="add_phone" title="Add field">
+                <i class="fas fa-plus"></i>
+              </a>
+            </div>
           </div>
         <% end %>
-      </div>
       </div>
 
       <%# Email %>
@@ -110,10 +103,8 @@
         <% end %>
         <div class="star-title star-title2">
             <i class="fa-thin fa-asterisk star"></i>
-
           <%= form.label :email, "Email", class: "title" %>
         </div>
-        
         <%= form.text_field :email, class: "data text"%>
       </div>
 
@@ -123,14 +114,10 @@
           <div class="error-msg">Current Address <%= @applicant.errors[:current_address][0] %></div>
         <% end %>
         <div class="star-title">
-          
             <i class="fa-thin fa-asterisk star"></i>
-          
           <%= form.label :current_address, "Current Address", class: "title" %>
         </div>
-        
         <%= form.text_area :current_address, class: "data address text"%>
-        
       </div>
 
       <%# Hometown Address %>
@@ -144,7 +131,6 @@
           <% end %>
           <%= form.label :hometown_address, "Hometown Address", class: "title" %>
         </div>
-        
         <%= form.text_area :hometown_address, class: "data address text"%>
       </div>
 
@@ -156,14 +142,11 @@
       <%# Education Level %>
       <div class="form-group clearFix">
         <div class="star-title">
-          
-            <i class="fa-thin fa-asterisk star"></i>
-
+          <i class="fa-thin fa-asterisk star"></i>
           <%= form.label :edu, "Education Level", class: "title" %>
         </div>
-        
-        <div class="form-group2 clearFix">
 
+        <div class="form-group2 clearFix">
           <%# Bachelor %>
           <div class="diploma">Bachelor</div>
           <div class="sub-title-block">
@@ -213,11 +196,10 @@
           <% end %>
           <%= form.label :diploma_name, "Diploma Name", class: "title" %>
         </div>
-        
         <%= form.text_field :diploma_name, class: "data text" %>
         <% if @applicant.errors[:diploma_name].any? %>
-            <div class="error-msg">Diploma Name <%= @applicant.errors[:diploma_name][0] %></div>
-          <% end %>
+          <div class="error-msg">Diploma Name <%= @applicant.errors[:diploma_name][0] %></div>
+        <% end %>
       </div>
 
       <%# Other Certification %>
@@ -228,11 +210,10 @@
           <% end %>
           <%= form.label :certificate, "Other Certification", class: "title" %>
         </div>
-        
         <%= form.text_field :certificate, class: "data text" %>
         <% if @applicant.errors[:certificate].any? %>
-            <div class="error-msg">Certification <%= @applicant.errors[:certificate][0] %></div>
-          <% end %>
+          <div class="error-msg">Certification <%= @applicant.errors[:certificate][0] %></div>
+        <% end %>
       </div>
 
       <%# Programming Skills %>
@@ -243,7 +224,6 @@
           <% end %>
           <%= form.label :program, "Programming Skills", class: "title" %>
         </div>
-        
 
         <%# Programming Language/Level %>
         <div class="form-group3">
@@ -258,7 +238,7 @@
           <div class="language_wrapper">
             <% if @test %>
               <% if @test[0]%>
-                  <div class="language_item">
+                <div class="language_item">
                   <%= form.text_field "programming[][language]", class: "data language text", placeholder: "Ruby", value: @test[0]['language'] %>
                   <%= form.text_field "programming[][level]", class: "data level text", placeholder: "A", value: @test[0]['level']  %>
                   <a href="javascript:void(0);" class="add_language" title="Add field">
@@ -267,7 +247,7 @@
                 </div>
               <% end %>
               <% if @test[1]%>
-                  <div class="language_item">
+                <div class="language_item">
                   <%= form.text_field "programming[][language]", class: "data language text", placeholder: "Ruby", value: @test[1]['language'] %>
                   <%= form.text_field "programming[][level]", class: "data level text", placeholder: "A", value: @test[1]['level'] %>
                   <a href="javascript:void(0);" class="remove_phone" title="Add field">
@@ -276,7 +256,7 @@
                 </div>
               <% end %>
               <% if @test[2]%>
-                  <div class="language_item">
+                <div class="language_item">
                   <%= form.text_field "programming[][language]", class: "data language text", placeholder: "Ruby", value: @test[2]['language'] %>
                   <%= form.text_field "programming[][level]", class: "data level text", placeholder: "A", value: @test[2]['level'] %>
                   <a href="javascript:void(0);" class="remove_phone" title="Add field">
@@ -285,7 +265,7 @@
                 </div>
               <% end %>
               <% if @test[3]%>
-                  <div class="language_item">
+                <div class="language_item">
                   <%= form.text_field "programming[][language]", class: "data language text", placeholder: "Ruby", value: @test[3]['language'] %>
                   <%= form.text_field "programming[][level]", class: "data level text", placeholder: "A", value: @test[3]['level'] %>
                   <a href="javascript:void(0);" class="remove_phone" title="Add field">
@@ -294,7 +274,7 @@
                 </div>
               <% end %>
               <% if @test[4]%>
-                  <div class="language_item">
+                <div class="language_item">
                   <%= form.text_field "programming[][language]", class: "data language text", placeholder: "Ruby", value: @test[4]['language'] %>
                   <%= form.text_field "programming[][level]", class: "data level text", placeholder: "A", value: @test[4]['level'] %>
                   <a href="javascript:void(0);" class="remove_phone" title="Add field">
@@ -304,16 +284,13 @@
               <% end %>
             <% else%>
               <div class="language_item">
-              <%= form.text_field "programming[][language]", class: "data language text", placeholder: "Ruby" %>
-              <%= form.text_field "programming[][level]", class: "data level text", placeholder: "A" %>
-              <a href="javascript:void(0);" class="add_language" title="Add field">
-                <i class="fas fa-plus"></i>
-              </a>
-            </div>
+                <%= form.text_field "programming[][language]", class: "data language text", placeholder: "Ruby" %>
+                <%= form.text_field "programming[][level]", class: "data level text", placeholder: "A" %>
+                <a href="javascript:void(0);" class="add_language" title="Add field">
+                  <i class="fas fa-plus"></i>
+                </a>
+              </div>
             <% end %>
-          </div>
-          <div>
-            
           </div>
         </div>
       </div>
@@ -360,111 +337,102 @@
       <div class="form-group clearFix">
         <%= form.label :is_exist_job_exp, "Has Job Experience", class: "title" %>
 
-         
-
-
           <%= form.check_box :is_exist_job_exp, class: "jobexp"%>
-           <% if @applicant[:is_exist_job_exp] %>
-
-            <div class="ebdiv1">
-              <%# Internship Information %>
-              <div class="form-group clearFix">
-              <div class="star-title">
-                <% if @applicant.errors[:internship_info].any? %>
-                  <i class="fa-thin fa-asterisk star"></i>
-                <% end %>
-                <%= form.label :internship_info, "Internship Info", class: "title" %>
-              </div>
-                
-                <%= form.text_area :internship_info, class: "data address text"%>
-                <% if @applicant.errors[:internship_info].any? %>
-                  <div class="error-msg">This Field <%= @applicant.errors[:internship_info][0] %></div>
-                <% end %>
-              </div>
-
-              <%# Job Experience %>
-              <div class="form-group clearFix">
-              <div class="star-title">
-                <% if @applicant.errors[:job_experience].any? %>
-                  <i class="fa-thin fa-asterisk star"></i>
-                <% end %>
-                <%= form.label :job_experience, "Job Experience", class: "title" %>
-              </div>
-                
-                <%= form.text_area :job_experience, class: "data address text"%>
-                <% if @applicant.errors[:job_experience].any? %>
-                  <div class="error-msg">This Field <%= @applicant.errors[:job_experience][0] %></div>
-                <% end %>
-              </div>
-
-              <%# Total Experience Year %>
-              <div class="form-group clearFix">
+            <%# Exist Job Exp %>
+            <% if @applicant[:is_exist_job_exp] %>
+              <div class="ebdiv1">
+                <%# Internship Information %>
+                <div class="form-group clearFix">
                 <div class="star-title">
-                  <% if @applicant.errors[:total_exp_year].any? %>
+                  <% if @applicant.errors[:internship_info].any? %>
                     <i class="fa-thin fa-asterisk star"></i>
                   <% end %>
-                  <%= form.label :total_exp_year, "Total Experience Year", class: "title" %>
+                  <%= form.label :internship_info, "Internship Info", class: "title" %>
                 </div>
-                
-                <%= form.number_field :total_exp_year, class: "data text"%>
-                <% if @applicant.errors[:total_exp_year].any? %>
-                  <div class="error-msg">This Field <%= @applicant.errors[:total_exp_year][0] %></div>
-                <% end %>
-              </div>
-            </div>
-          <% else %>
+                  
+                  <%= form.text_area :internship_info, class: "data address text"%>
+                  <% if @applicant.errors[:internship_info].any? %>
+                    <div class="error-msg">This Field <%= @applicant.errors[:internship_info][0] %></div>
+                  <% end %>
+                </div>
 
-            <div class="ebdiv">
-              <%# Internship Information %>
-              <div class="form-group clearFix">
-              <div class="star-title">
-                <% if @applicant.errors[:internship_info].any? %>
-                  <i class="fa-thin fa-asterisk star"></i>
-                <% end %>
-                <%= form.label :internship_info, "Internship Info", class: "title" %>
-              </div>
-                
-                <%= form.text_area :internship_info, class: "data address text"%>
-                <% if @applicant.errors[:internship_info].any? %>
-                  <div class="error-msg">This Field <%= @applicant.errors[:internship_info][0] %></div>
-                <% end %>
-              </div>
-
-              <%# Job Experience %>
-              <div class="form-group clearFix">
-              <div class="star-title">
-                <% if @applicant.errors[:job_experience].any? %>
-                  <i class="fa-thin fa-asterisk star"></i>
-                <% end %>
-                <%= form.label :job_experience, "Job Experience", class: "title" %>
-              </div>
-                
-                <%= form.text_area :job_experience, class: "data address text"%>
-                <% if @applicant.errors[:job_experience].any? %>
-                  <div class="error-msg">This Field <%= @applicant.errors[:job_experience][0] %></div>
-                <% end %>
-              </div>
-
-              <%# Total Experience Year %>
-              <div class="form-group clearFix">
+                <%# Job Experience %>
+                <div class="form-group clearFix">
                 <div class="star-title">
-                  <% if @applicant.errors[:total_exp_year].any? %>
+                  <% if @applicant.errors[:job_experience].any? %>
                     <i class="fa-thin fa-asterisk star"></i>
                   <% end %>
-                  <%= form.label :total_exp_year, "Total Experience Year", class: "title" %>
+                  <%= form.label :job_experience, "Job Experience", class: "title" %>
                 </div>
-                
-                <%= form.number_field :total_exp_year, class: "data text"%>
-                <% if @applicant.errors[:total_exp_year].any? %>
-                  <div class="error-msg">This Field <%= @applicant.errors[:total_exp_year][0] %></div>
-                <% end %>
+                  
+                  <%= form.text_area :job_experience, class: "data address text"%>
+                  <% if @applicant.errors[:job_experience].any? %>
+                    <div class="error-msg">This Field <%= @applicant.errors[:job_experience][0] %></div>
+                  <% end %>
+                </div>
+
+                <%# Total Experience Year %>
+                <div class="form-group clearFix">
+                  <div class="star-title">
+                    <% if @applicant.errors[:total_exp_year].any? %>
+                      <i class="fa-thin fa-asterisk star"></i>
+                    <% end %>
+                    <%= form.label :total_exp_year, "Total Experience Year", class: "title" %>
+                  </div>
+                  
+                  <%= form.number_field :total_exp_year, class: "data text"%>
+                  <% if @applicant.errors[:total_exp_year].any? %>
+                    <div class="error-msg">This Field <%= @applicant.errors[:total_exp_year][0] %></div>
+                  <% end %>
+                </div>
               </div>
-            </div>
-          <% end %>
-          
+            <% else %>
+            <%# Not Exist Job Exp %>
+              <div class="ebdiv">
+                <%# Internship Information %>
+                <div class="form-group clearFix">
+                  <div class="star-title">
+                    <% if @applicant.errors[:internship_info].any? %>
+                      <i class="fa-thin fa-asterisk star"></i>
+                    <% end %>
+                    <%= form.label :internship_info, "Internship Info", class: "title" %>
+                  </div>
+                  <%= form.text_area :internship_info, class: "data address text"%>
+                  <% if @applicant.errors[:internship_info].any? %>
+                    <div class="error-msg">This Field <%= @applicant.errors[:internship_info][0] %></div>
+                  <% end %>
+                </div>
+
+                <%# Job Experience %>
+                <div class="form-group clearFix">
+                  <div class="star-title">
+                    <% if @applicant.errors[:job_experience].any? %>
+                      <i class="fa-thin fa-asterisk star"></i>
+                    <% end %>
+                    <%= form.label :job_experience, "Job Experience", class: "title" %>
+                  </div>
+                  <%= form.text_area :job_experience, class: "data address text"%>
+                  <% if @applicant.errors[:job_experience].any? %>
+                    <div class="error-msg">This Field <%= @applicant.errors[:job_experience][0] %></div>
+                  <% end %>
+                </div>
+
+                <%# Total Experience Year %>
+                <div class="form-group clearFix">
+                  <div class="star-title">
+                    <% if @applicant.errors[:total_exp_year].any? %>
+                      <i class="fa-thin fa-asterisk star"></i>
+                    <% end %>
+                    <%= form.label :total_exp_year, "Total Experience Year", class: "title" %>
+                  </div>                
+                  <%= form.number_field :total_exp_year, class: "data text"%>
+                  <% if @applicant.errors[:total_exp_year].any? %>
+                    <div class="error-msg">This Field <%= @applicant.errors[:total_exp_year][0] %></div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
       </div>
-
-      
     </div>
 
     <%# Buttons %>
@@ -472,8 +440,6 @@
         <%= form.submit "Clear", :type => "reset" , class: "reset-btn"%>
         <%= form.submit "Submit", :type => "submit", class: "create-btn"%>
     </div>
-    
   <% end %>
   <%= javascript_pack_tag 'app/app' %>
-  
 </div>

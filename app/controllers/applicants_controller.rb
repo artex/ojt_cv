@@ -1,12 +1,13 @@
 class ApplicantsController < ApplicationController
+
   def applicants
     @applicant = Applicant.new
   end
+
   def confirm
-    # render plain: params
     @applicant = Applicant.new(form_params)
-    
     if @applicant.valid? == true
+      # render plain: form_params
       if form_params[:profile_photo]
         name = params[:applicant][:profile_photo].original_filename
         user_name = params[:applicant][:name]
@@ -16,28 +17,21 @@ class ApplicantsController < ApplicationController
         if !File.extname(params[:applicant][:profile_photo]).eql?(".png")&&
           !File.extname(params[:applicant][:profile_photo]).eql?(".jpg")&&
           !File.extname(params[:applicant][:profile_photo]).eql?(".jpeg")
-          # redirect_to root_path, notice: "Profile Photo should be image type"
-  
           flash[:notice] = "Profile Photo should be image type"
           render :applicants 
         end
-      else
       end
-      
-      # render plain: @file_path
     else
       if form_params[:profile_photo]
         if !File.extname(params[:applicant][:profile_photo]).eql?(".png")&&
           !File.extname(params[:applicant][:profile_photo]).eql?(".jpg")&&
           !File.extname(params[:applicant][:profile_photo]).eql?(".jpeg")
-          # redirect_to root_path, notice: "Profile Photo should be image type"
-  
           flash[:notice] = "Profile Photo should be image type"
           render :applicants 
         else
           @test = params[:applicant][:programming]
-        @exp = form_params[:is_exist_job_exp]
-        render :applicants 
+          @exp = form_params[:is_exist_job_exp]
+          render :applicants 
         end
       else
         @test = params[:applicant][:programming]
@@ -46,10 +40,14 @@ class ApplicantsController < ApplicationController
       end
     end
   end
+
   def save
     # render plain: params
     @form = Applicant.new(save_params)
-    @form.save
+    @is_save_form = ApplicantService.createApplicant(@form)
+    if !@is_save_form
+      render plain: @form
+    end
     # @is_save_form = form.save
   end
 
@@ -84,7 +82,6 @@ class ApplicantsController < ApplicationController
         @aa = @aa.to_s + (" "+a[:language] +": " +a[:level] + " ,").to_s
       end
       @ee= @aa.delete_suffix(',')
-    # render plain: @ee
       params = ActionController::Parameters.new({
         test_obj: {
           name: @name,

@@ -1,66 +1,66 @@
 <div class="confirm-container">
-    <h2 class="confirm-header">Please Check Your data before Send!</h2>
+  <h2 class="confirm-header">Please Check Your data before Send!</h2>
     
-<%= form_with model: @applicant, url: save_applicants_path(@applicant), class: "main-form" do |form| %>
+  <%= form_with model: @applicant, url: save_applicants_path(@applicant), class: "main-form" do |form| %>
     <div class="confirm clearFix">
-        <div class="confirm-label">
-            <span>Name </span>
-            <span class="c-data3">profile_phto </span>
-            <span>DOB </span>
-            <span>Phone 1 </span>
-            <span>Phone 2 </span>
-            <span>Email </span>
-            <span class="c-data5">Current Address </span>
-            <span class="c-data5">Hometown Address </span>
-            <span>Bachelor University </span>
-            <span>Bachelor Year </span>
-            <span>Bachelor Degree </span>
-            <span>Master University </span>
-            <span>Master Year </span>
-            <span>Master Degree </span>
-            <span>Diploma Name </span>
-            <span>Certificates </span>
-            <span>Programming  </span>
-            <span>English Level </span>
-            <span>Japanese Level </span>
-            <span>Other Level </span>
-            <span>Internship Info </span>
-            <span>Job Exp </span>
-            <span>Total Exp Year </span>
-            <span>Comment </span>
-        </div>
-        <div class ="confirm-data">
-            <%= form.text_field :name, value: @applicant[:name], class: "c-data", :readonly => true %>
-            <div class="c-data2"><%= image_tag("#@file_path")%></div>
-            <%= form.text_field :profile_photo, value: @file_path, class: "c-data invi", :readonly => true %>
-            <%= form.text_field :dob, value: @applicant[:dob].strftime('%Y-%m-%d'), class: "c-data", :readonly => true %>
-            <%= form.text_field :phone_no1, value: "0#{@applicant[:phone_no1]}", class: "c-data", :readonly => true %>
-            <%= form.text_field :phone_no2, value: @applicant[:phone_no2], class: "c-data", :readonly => true %>
-            <%= form.text_field :email, value: @applicant[:email], class: "c-data", :readonly => true %>
-            <%= form.text_area :current_address, value: @applicant[:current_address], class: "c-data4 address1", :readonly => true %>
-            <%= form.text_area :hometown_address, value: @applicant[:hometown_address], class: "c-data6 address1", :readonly => true %>
-            <%= form.text_field :bachelor_university, value: @applicant[:bachelor_university], class: "c-data7", :readonly => true %>
-            <%= form.text_field :bachelor_year, value: @applicant[:bachelor_year], class: "c-data", :readonly => true %>
-            <%= form.text_field :bachelor_degree, value: @applicant[:bachelor_degree], class: "c-data", :readonly => true %>
-            <%= form.text_field :master_university, value: @applicant[:master_university], class: "c-data", :readonly => true %>
-            <%= form.text_field :master_year, value: @applicant[:master_year], class: "c-data", :readonly => true %>
-            <%= form.text_field :master_degree, value: @applicant[:master_degree], class: "c-data", :readonly => true %>
-            <%= form.text_field :diploma_name, value: @applicant[:diploma_name], class: "c-data", :readonly => true %>
-            <%= form.text_field :certificate, value: @applicant[:certificate], class: "c-data", :readonly => true %>
-            <%= form.text_field :programming, value: @applicant[:programming], class: "c-data", :readonly => true %>
-            <%= form.text_field :english, value: @applicant[:english], class: "c-data", :readonly => true %>
-            <%= form.text_field :japanese, value: @applicant[:japanese], class: "c-data", :readonly => true %>
-            <%= form.text_field :other, value: @applicant[:other], class: "c-data", :readonly => true %>
-            <%= form.text_field :is_exist_job_exp, value: @applicant[:is_exist_job_exp], class: "c-data invi", :readonly => true %>
-            <%= form.text_field :internship_info, value: @applicant[:internship_info], class: "c-data", :readonly => true %>
-            <%= form.text_field :job_experience, value: @applicant[:job_experience], class: "c-data", :readonly => true %>
-            <%= form.text_field :total_exp_year, value: @applicant[:total_exp_year], class: "c-data", :readonly => true %>
-            <%= form.text_field :comment, value: @applicant[:comment], class: "c-data", :readonly => true %>
-        </div>
+      <div class="confirm-label">
+        <span>Name </span>
+        <span class="c-data3">profile_phto </span>
+        <span>DOB </span>
+        <span>Phone 1 </span>
+        <span>Phone 2 </span>
+        <span>Email </span>
+        <span class="c-data5">Current Address </span>
+        <span class="c-data5">Hometown Address </span>
+        <span>Bachelor University </span>
+        <span>Bachelor Year </span>
+        <span>Bachelor Degree </span>
+        <span>Master University </span>
+        <span>Master Year </span>
+        <span>Master Degree </span>
+        <span>Diploma Name </span>
+        <span>Certificates </span>
+        <span>Programming  </span>
+        <span>English Level </span>
+        <span>Japanese Level </span>
+        <span>Other Level </span>
+        <span>Internship Info </span>
+        <span>Job Exp </span>
+        <span>Total Exp Year </span>
+        <span>Comment </span>
+      </div>
+      <div class ="confirm-data">
+        <%= form.text_field :name, value: @applicant[:name], class: "c-data", :readonly => true %>
+        <div class="c-data2"><%= image_tag("#@file_path")%></div>
+        <%= form.text_field :profile_photo, value: @file_path, class: "c-data invi", :readonly => true %>
+        <%= form.text_field :dob, value: @applicant[:dob].strftime('%Y-%m-%d'), class: "c-data", :readonly => true %>
+        <%= form.text_field :phone_no1, value: @applicant[:phone_no1], class: "c-data", :readonly => true %>
+        <%= form.text_field :phone_no2, value: @applicant[:phone_no2], class: "c-data", :readonly => true %>
+        <%= form.text_field :email, value: @applicant[:email], class: "c-data", :readonly => true %>
+        <%= form.text_area :current_address, value: @applicant[:current_address], class: "c-data4 address1", :readonly => true %>
+        <%= form.text_area :hometown_address, value: @applicant[:hometown_address], class: "c-data6 address1", :readonly => true %>
+        <%= form.text_field :bachelor_university, value: @applicant[:bachelor_university], class: "c-data7", :readonly => true %>
+        <%= form.text_field :bachelor_year, value: @applicant[:bachelor_year], class: "c-data", :readonly => true %>
+        <%= form.text_field :bachelor_degree, value: @applicant[:bachelor_degree], class: "c-data", :readonly => true %>
+        <%= form.text_field :master_university, value: @applicant[:master_university], class: "c-data", :readonly => true %>
+        <%= form.text_field :master_year, value: @applicant[:master_year], class: "c-data", :readonly => true %>
+        <%= form.text_field :master_degree, value: @applicant[:master_degree], class: "c-data", :readonly => true %>
+        <%= form.text_field :diploma_name, value: @applicant[:diploma_name], class: "c-data", :readonly => true %>
+        <%= form.text_field :certificate, value: @applicant[:certificate], class: "c-data", :readonly => true %>
+        <%= form.text_field :programming, value: @applicant[:programming], class: "c-data", :readonly => true %>
+        <%= form.text_field :english, value: @applicant[:english], class: "c-data", :readonly => true %>
+        <%= form.text_field :japanese, value: @applicant[:japanese], class: "c-data", :readonly => true %>
+        <%= form.text_field :other, value: @applicant[:other], class: "c-data", :readonly => true %>
+        <%= form.text_field :is_exist_job_exp, value: @applicant[:is_exist_job_exp], class: "c-data invi", :readonly => true %>
+        <%= form.text_field :internship_info, value: @applicant[:internship_info], class: "c-data", :readonly => true %>
+        <%= form.text_field :job_experience, value: @applicant[:job_experience], class: "c-data", :readonly => true %>
+        <%= form.text_field :total_exp_year, value: @applicant[:total_exp_year], class: "c-data", :readonly => true %>
+        <%= form.text_field :comment, value: @applicant[:comment], class: "c-data", :readonly => true %>
+      </div>
     </div>
     <div class="submit-btn">
         <%= link_to "Back", :root, :class => "back-btn" %>
         <%= form.submit "Submit", :type => "submit", class: "create-btn"%>
     </div>
-<% end %>
+  <% end %>
 </div>

@@ -15,8 +15,8 @@ $(document).ready(function() {
         $(this).parent('div').remove();
         x--;
     });
-
 });
+
 $(document).ready(function() {
     var test = $('.upload-profile-btn');
     $(test).change(function() {
@@ -24,6 +24,7 @@ $(document).ready(function() {
         $('.show_name').html(filename);
     });
 });
+
 $(document).ready(function() {
     var count = 2
     var maxField = 5;
@@ -34,22 +35,21 @@ $(document).ready(function() {
         if (x < maxField) {
             var fieldHTML = '<div class="language_item"><input type="text" class="data language text" name="applicant[programming[][language]]" ' +
                 'value=""/><input type="text" class="data level text" name="applicant[programming[][level]]" value=""/><a href="javascript:void(0);" class="remove_phone">' +
-                '<i class="fas fa-minus"></i></a></div>'; //New input field html
+                '<i class="fas fa-minus"></i></a></div>';
             x++;
 
             $(languageWrapper).append(fieldHTML);
             count++;
         }
     });
-
     $(languageWrapper).on('click', '.remove_phone', function(e) {
         e.preventDefault();
         $(this).parent('div').remove();
-        // $(".language_wrapper div:nth-last-of-type(1)").remove();
         count--;
         x--;
     });
 });
+
 $(document).ready(function() {
     $(".jobexp").change(function() {
         if (this.checked) {
@@ -61,8 +61,28 @@ $(document).ready(function() {
         }
     });
 });
+
 $(document).ready(function() {
     $(".reset-btn").click(function() {
         location.reload();
+    });
+});
+
+$(document).ready(function() {
+    var maxField = 2;
+    var addPhone = $('.add_phone2');
+    var phoneWrapper = $('.phone_wrapper');
+    var fieldHTML = '<div class="phone_item"><input type="number" class="data phone" name="applicant[phone_no2]" value=""/><a href="javascript:void(0);" class="remove_phone"><i class="fas fa-minus"></i></a></div>'; //New input field html 
+    var x = 2;
+    $(addPhone).click(function() {
+        if (x < maxField) {
+            x++;
+            $(phoneWrapper).append(fieldHTML);
+        }
+    });
+    $(phoneWrapper).on('click', '.remove_phone', function(e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x--;
     });
 });
