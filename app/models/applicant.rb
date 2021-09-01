@@ -17,6 +17,8 @@ class Applicant < ApplicationRecord
     validates :diploma_name, length: { maximum: 100 }
     validates :certificate, length: { maximum: 255 }
     validates :total_exp_year, length: { maximum: 3 }
-
-    
+    validates :english, length: { maximum: 255 }
+    validates :japanese, length: { maximum: 255 }
+    validates :other, length: { maximum: 255 }
+    validates :programming, length: { maximum: 100 }
 end

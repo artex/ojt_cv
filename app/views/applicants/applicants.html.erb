@@ -252,7 +252,9 @@
             <%= form.label :programming_level, "Level", class: "program" %>
           </div> 
           <%# Programming Language/Level 01 %>
-
+          <% if @applicant.errors[:programming].any? %>
+            <div class="error-msg1"> Programming Language or Level <%= @applicant.errors[:programming][0] %></div>
+          <% end %>
           <div class="language_wrapper">
             <% if @test %>
               <% if @test[0]%>
@@ -310,9 +312,6 @@
             </div>
             <% end %>
           </div>
-          <% if @applicant.errors[:programming].any? %>
-            <div class="error-msg"> Programming <%= @applicant.errors[:master_degree][0] %></div>
-          <% end %>
           <div>
             
           </div>
@@ -412,21 +411,6 @@
                   <div class="error-msg">This Field <%= @applicant.errors[:total_exp_year][0] %></div>
                 <% end %>
               </div>
-
-              <%# Comment %>
-              <div class="form-group clearFix">
-                <div class="star-title">
-                  <% if @applicant.errors[:comment].any? %>
-                    <i class="fa-thin fa-asterisk star"></i>
-                  <% end %>
-                  <%= form.label :comment, "Comment", class: "title" %>
-                </div>
-                
-                <%= form.text_area :comment, class: "data address text"%>
-                <% if @applicant.errors[:comment].any? %>
-                  <div class="error-msg">This Field <%= @applicant.errors[:comment][0] %></div>
-                <% end %>
-              </div>
             </div>
           <% else %>
 
@@ -473,21 +457,6 @@
                 <%= form.number_field :total_exp_year, class: "data text"%>
                 <% if @applicant.errors[:total_exp_year].any? %>
                   <div class="error-msg">This Field <%= @applicant.errors[:total_exp_year][0] %></div>
-                <% end %>
-              </div>
-
-              <%# Comment %>
-              <div class="form-group clearFix">
-                <div class="star-title">
-                  <% if @applicant.errors[:comment].any? %>
-                    <i class="fa-thin fa-asterisk star"></i>
-                  <% end %>
-                  <%= form.label :comment, "Comment", class: "title" %>
-                </div>
-                
-                <%= form.text_area :comment, class: "data address text"%>
-                <% if @applicant.errors[:comment].any? %>
-                  <div class="error-msg">This Field <%= @applicant.errors[:comment][0] %></div>
                 <% end %>
               </div>
             </div>

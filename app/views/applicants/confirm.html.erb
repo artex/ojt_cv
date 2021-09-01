@@ -10,8 +10,8 @@
             <span>Phone 1 </span>
             <span>Phone 2 </span>
             <span>Email </span>
-            <span>Current Address </span>
-            <span>Hometown Address </span>
+            <span class="c-data5">Current Address </span>
+            <span class="c-data5">Hometown Address </span>
             <span>Bachelor University </span>
             <span>Bachelor Year </span>
             <span>Bachelor Degree </span>
@@ -33,13 +33,13 @@
             <%= form.text_field :name, value: @applicant[:name], class: "c-data", :readonly => true %>
             <div class="c-data2"><%= image_tag("#@file_path")%></div>
             <%= form.text_field :profile_photo, value: @file_path, class: "c-data invi", :readonly => true %>
-            <%= form.text_field :dob, value: @applicant[:dob], class: "c-data", :readonly => true %>
-            <%= form.text_field :phone_no1, value: @applicant[:phone_no1], class: "c-data", :readonly => true %>
+            <%= form.text_field :dob, value: @applicant[:dob].strftime('%Y-%m-%d'), class: "c-data", :readonly => true %>
+            <%= form.text_field :phone_no1, value: "0#{@applicant[:phone_no1]}", class: "c-data", :readonly => true %>
             <%= form.text_field :phone_no2, value: @applicant[:phone_no2], class: "c-data", :readonly => true %>
             <%= form.text_field :email, value: @applicant[:email], class: "c-data", :readonly => true %>
-            <%= form.text_field :current_address, value: @applicant[:current_address], class: "c-data", :readonly => true %>
-            <%= form.text_field :hometown_address, value: @applicant[:hometown_address], class: "c-data", :readonly => true %>
-            <%= form.text_field :bachelor_university, value: @applicant[:bachelor_university], class: "c-data", :readonly => true %>
+            <%= form.text_area :current_address, value: @applicant[:current_address], class: "c-data4 address1", :readonly => true %>
+            <%= form.text_area :hometown_address, value: @applicant[:hometown_address], class: "c-data6 address1", :readonly => true %>
+            <%= form.text_field :bachelor_university, value: @applicant[:bachelor_university], class: "c-data7", :readonly => true %>
             <%= form.text_field :bachelor_year, value: @applicant[:bachelor_year], class: "c-data", :readonly => true %>
             <%= form.text_field :bachelor_degree, value: @applicant[:bachelor_degree], class: "c-data", :readonly => true %>
             <%= form.text_field :master_university, value: @applicant[:master_university], class: "c-data", :readonly => true %>

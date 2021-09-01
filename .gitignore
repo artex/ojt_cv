@@ -26,6 +26,8 @@
 /storage/*
 !/storage/.keep
 
+/app/assets/images/
+
 /public/assets
 .byebug_history
 
