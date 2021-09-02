@@ -227,14 +227,15 @@
 
         <%# Programming Language/Level %>
         <div class="form-group3">
+          <% if @applicant.errors[:programming].any? %>
+              <div class="error-msg1"> Programming Language or Level <%= @applicant.errors[:programming][0] %></div>
+          <% end %>
           <div class="clearFix">
             <%= form.label :programming_language, "Language", class: "program" %>
             <%= form.label :programming_level, "Level", class: "program" %>
           </div> 
           <%# Programming Language/Level 01 %>
-          <% if @applicant.errors[:programming].any? %>
-            <div class="error-msg1"> Programming Language or Level <%= @applicant.errors[:programming][0] %></div>
-          <% end %>
+          
           <div class="language_wrapper">
             <% if @test %>
               <% if @test[0]%>
